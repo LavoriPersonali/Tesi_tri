@@ -1,0 +1,16 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: TestoTesi.aux
+White space in argument---line 10 of file TestoTesi.aux
+ : \citation{Salut
+ :                 Atore}
+I'm skipping whatever remains of this command
+White space in argument---line 11 of file TestoTesi.aux
+ : \citation{?50
+ :               sfumature di Saluti?}
+I'm skipping whatever remains of this command
+White space in argument---line 12 of file TestoTesi.aux
+ : \citation{De
+ :              Gostino}
+I'm skipping whatever remains of this command
+I found no \bibdata command---while reading file TestoTesi.aux
+I found no \bibstyle command---while reading file TestoTesi.aux
+(There were 5 error messages)

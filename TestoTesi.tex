@@ -8,7 +8,6 @@
 \usepackage{graphicx}
 \author{Edoardo Maione}
 \title{Qui va il Titolo}
-\makeindex
 \begin{document}
 	\maketitle
 	\begin{minipage}[c][\textheight][c]{\textwidth}
@@ -33,20 +32,37 @@
 	
 	Inoltre possono essere presenti e ammesse all'interno della rete, tecnologie/protocolli che vanno a minare direttamente la sicurezza dell'intera rete, rendendo possibile modifiche nella configurazione di router o device di rete direttamente da remoto, come UPnP: il quale permette di aprire porte all'interno del router locale senza la necessità di autenticazione o permessi specifici.
 	\newpage
-	Indubbiamente con tutte queste tecnologie si sono semplificate, se non addirittura rese completamente automatizzate, molte procedure di configurazione e interconnessione, rendendo accessibile a chiunque l'utilizzo di tali strumenti. Ma a quale prezzo? L'utilizzatore è a conoscenza di quali sono le informazioni scambiate all'interno della propria rete locale, e quali dati rende disponibile ad un eventuale ospite esterno/intruso nella propria Home-Network? 
+	Indubbiamente con tutte queste tecnologie si sono semplificate, se non addirittura rese completamente automatizzate, molte procedure di configurazione e interconnessione, rendendo accessibile a chiunque l'utilizzo di tali strumenti. Ma a quale prezzo? L'utilizzatore è a conoscenza di quali sono le informazioni scambiate all'interno della propria rete locale, e quali dati rende disponibile ad un eventuale ospite esterno/intruso nella propria Home-Network?  
 	
 	\section[Traffico LAN Prima]{Traffico LAN Prima}
 	Fino a qualche anno fa, all'interno delle nostre reti locali private, la quantità di traffico interno che vi transitava era pressoché nulla, dato che le uniche periferiche che avevano accesso alle rete erano i PC, e l'interazione fra di loro e le applicazioni era minima.
 	
-	I primi a tentare un approccio di \textquotedblleft Autoconfigurazione\textquotedblright e di \textit{interconnessione automatica} furono gli sviluppatori Apple con il loro AppleTalk: in grado di mettere in comunicazione un gruppo di Macs all'interno di una rete locale LAN senza bisogno dell'intervento di alcun esperto, senza la necessità di alcun setup di una struttura centrale che coordini o offra servizi per le periferiche, come un server DHCP o di un server DNS. Similmente, in seguito furono sviluppati NetBIOS e IPX, offrendo la medesima possibilità di interconnettere dispositivi che implementassero i suddetti protocolli.
+	I primi a tentare un approccio di \textquotedblleft Autoconfigurazione\textquotedblright e di \textit{interconnessione automatica} furono gli sviluppatori Apple con il loro AppleTalk: in grado di mettere in comunicazione un gruppo di Macs all'interno di una rete locale LAN senza bisogno dell'intervento di alcun esperto, senza la necessità di alcun setup o di una struttura centrale che coordinasse o offrisse servizi per le periferiche, come un server DHCP o di un server DNS. Similmente, in seguito furono sviluppati NetBIOS e IPX, offrendo la medesima possibilità di interconnettere dispositivi che implementassero i suddetti protocolli.
 	
 	Con l'avvento dello standard(tutt'oggi ancora NON definitivo) denominato \textbf{\textit{Zeroconf}}, nato dall'idea di AppleTalk, si sono susseguite numerose implementazioni e copiosi utilizzi del concetto di \textit{autoconfigurazione} e 0 intervento esterno/strutture centrali per la configurazione e il coordinamento fra applicazioni/dispositivi. I primi a trarne vantaggio e trovarne subito un pratico utilizzo furono i costruttori di stampanti e, in generale, di dispositivi utilizzati in ufficio, non avendo avuto fino a quel momento la possibilità di includere interfacce utente per configurare manualmente le macchine, e quindi rendendo impossibile un agevole utilizzo di tali apparecchi all'interno della rete Aziendale/Domestica.
 	
 	\newpage
-	\section[Traffico LAN Oggi]{Cosa transita all'interno delle NOSTRE Reti?}
+	\section[Traffico LAN Oggi]{Cosa transita oggi all'interno \\delle NOSTRE Reti?}
+	La quantità di informazioni che transita oggi all'interno della rete locale è veramente vasta, rendendo possibile l'utilizzo di dispositivi e servizi da essi offerti anche ad utenti non specializzati, completamente ignari di come sia resa possibile l'interazione; di contro, tutti questi dati, non solo riportano molte informazioni personali su dispositivi ed utenti che li utilizzano, ma inoltre per carpirle non è necessario compiere azioni specifiche, come introdursi all'interno del dispositivo, è sufficiente essere collegati alla stessa rete locale e recuperare tali informazioni dai pacchetti che vengono liberamente distribuiti all'interno della stessa, sia che il dispositivo sia realmente interessato che non. Questa situazione pone un'eventuale intruso/ospite nella rete, che è interessato a scoprirne la topologlia, in una condizione ottimale, limitandosi ad \textit{ascoltare} le informazioni che gli vengono fornite degli altri dispositivi, senza intraprendere azioni di alcuna sorta nei confronti degli altri dispositivi, e quindi rendendone anche difficile l'individuazione. 
+	
+	\section{Obiettivo}
+	Lo scopo di questo Lavoro di Tesi è mostrare le vulnerabilità delle reti locali in termini di dati sensibili e privati, cercando di acquisire il maggior numero di informazioni possibili riguardo i nodi della rete, in modo completamente passivo, e identificando quali dispositivi sono connessi attualmente alla Rete Locale a cui abbiamo accesso. Questo mette in evidenza quante e quali informazioni vengono scambiate all'interno della rete, rendendo consapevoli gli utilizzatori di tale rete, di quali saranno le informazioni private che verranno diffuse tramite i loro dispositivi ad essa collegati. Grazie a tale consapevolezza, chi è addetto alla gestione e progettazione della rete può decidere eventualmente di separare il traffico in sotto-reti isolate, in modo tale da arginare eventuali diffusioni di informazioni sensibili, pur mantenendo e usufruendo di tutti i vantaggi che una comunicazione Broadcast/Multicast fra dispositivi in una rete locale comporta: per esempio auto-configurazione e scambio rapido di dati all'interno della rete locale, relegandolo nella propria LAN.
+	
+	Al fine di raggiungere tale scopo, è stato approntato uno studio sulla metodologia di raccolta di tali informazioni, e la loro organizzazione ed elaborazione, identificando la natura dei dispositivi che popolano una generica rete locale, i servizi da loro offerti, e in alcuni casi, i rapporti/connessioni che hanno fra loro.
+	
+	Come risultato di tale studio, è stato implementato uno strumento per l'analisi automatica di una rete locale, in grado di fornire informazioni più o meno dettagliate riguardo la topologia della rete, alla quale si ha libero accesso, e quindi identificando tutti quei dispositivi che annunciano e offrono servizi al suo interno: Dispositivi Mobili, Stampanti, Workstation di vario genere e Media-devices.
 	
 	\chapter[Il mio Lavoro]{Lavoro: Analisi mDNS e DB-lsp-DISC}
-	Lo scopo di questo lavoro è mostrare le vulnerabilità delle reti locali in termini di dati sensibili e privati, cercando di acquisire il maggior numero di informazioni possibili riguardo i nodi della rete, in modo completamente passivo, e identificando quali dispositivi sono connessi attualmente alla Rete Locale a cui abbiamo accesso. Questo mette in evidenza quante e quali informazioni vengono scambiate all'interno della rete, rendendo consapevoli gli utilizzatori di tale rete, di quali saranno le informazioni private che verranno diffuse tramite i loro dispositivi ad essa collegati. Grazie a tale consapevolezza, chi è addetto alla gestione della rete può decidere eventualmente di separare il traffico in sotto-reti isolate, in modo tale da arginare eventuali diffusioni di informazioni sensibili, pur mantenendo e usufruendo di tutti i vantaggi che una comunicazione Broadcast/Multicast fra dispositivi in una rete locale comporta: per esempio auto-configurazione e scambio rapido di informazioni all'interno della rete locale, limitandole a quest'ultima ... ??? .   
+	Il lavoro di tesi è partito da una raccolta di tutti quei protocolli di rete che utilizzassero lo scambio di pacchetti Multicast e Broadcast locale. 
+	
+	
+	- mDNS(per la stragrande maggioranza, annunciando servizi come spotify, Chromecast, ecc..., e dando varie info sui nomi degli utenti e delle macchine su cui girano), 
+	- NetBIOS-NS, 
+	- Link-local Multicast Name Resolution, 
+	- Dropbox LAN sync Discovery Protocol, 
+	- Microsoft Windows Browser Protocol, 
+	- Link Layer Discovery Protocol, 
+	- pacchetto UDP con porta destinataria 57621 usato per la rete locale P2P di spotify.
 	
 	\chapter[Stato dell'Arte]{Che hanno fatto l'altri?}
 	
@@ -66,6 +82,7 @@
 	
 	\chapter{Lavori Futuri}
 	\chapter[Conclusioni]{Conclusioni}
+	
 	
 	
 \end{document}
