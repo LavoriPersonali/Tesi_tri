@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper,openright]{book}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Edoardo Maione}
+\title{Qui va il Titolo}
+\makeindex
+\begin{document}
+	\maketitle
+	\begin{minipage}[c][\textheight][c]{\textwidth}
+		\pagestyle{empty}
+
+		\textbf{\Large Abstract} \\
+		
+		Nelle Reti locali moderne, sia Domestiche che Aziendali, sta crescendo il numero di dispositivi ad alta capacità di interazione con gli altri all'interno della stessa rete. A partire da stampanti di rete, proseguendo con i dispositivi mobili come Smartphone, Tablet, Wearable, ecc\dots \space che hanno avuto un aumento di diffusione esponenziale nell'ultimo decennio, fino ad arrivare agli elettrodomestici e alla domotica, anch'essa in crescita. In questo elaborato si vuole studiare e conoscere quali sono le informazioni che vengono scambiate tra questi dispositivi all'interno della rete locale per permettere un'interazione efficiente, ma soprattutto una ridotta, se non nulla, necessità di intervento \textquotedblleft specializzato\textquotedblright \space per quanto riguarda la configurazione di tali apparecchi.
+		
+	\end{minipage}
+	\tableofcontents
+	\begin{minipage}[c][\textheight][c]{\textwidth}
+		\index{\makeindex}
+	\end{minipage}
+	\newpage
+	\chapter{Introduzione}
+	Dispositivi e Applicazioni sono sempre più interconnessi tra loro, comunicando e scambiando informazioni, condividendo dati e interagendo per offrire servizi distribuiti ed autonomi. Basti pensare al semplice SSID di un Accesspoint WiFi, che si annuncia rendendosi visibile ai dispositivi in grado di connettersi, e diffondendo il proprio nome/ID del Router/Accesspoint; o ad una semplice stampante che si rende disponibile all'interno di una rete locale, identificandosi con il codice del Modello e diffondendo varie altre informazioni. 
+	
+	La necessità di rendere più autonoma possibile la comunicazione tra dispositivi e applicazioni, ha portato allo sviluppo di numerose tecniche e protocolli così detti di \textit{Autoconfigurazione}, che permettono un setup autonomo del/dei dispositivo/i all'interno della rete locale, e quindi non necessitando di una configurazione \textquotedblleft manuale\textquotedblright. 
+	
+	Tutte queste interazioni sono rese possibili grazie la diffusione di informazioni, più o meno confidenziali, a seconda del protocollo utilizzato, e spesso compromettendo la privacy dell'utente, possessore del dispositivo o utilizzatore della specifica applicazione. 
+	
+	Inoltre possono essere presenti e ammesse all'interno della rete, tecnologie/protocolli che vanno a minare direttamente la sicurezza dell'intera rete, rendendo possibile modifiche nella configurazione di router o device di rete direttamente da remoto, come UPnP: il quale permette di aprire porte all'interno del router locale senza la necessità di autenticazione o permessi specifici.
+	\newpage
+	Indubbiamente con tutte queste tecnologie si sono semplificate, se non addirittura rese completamente automatizzate, molte procedure di configurazione e interconnessione, rendendo accessibile a chiunque l'utilizzo di tali strumenti. Ma a quale prezzo? L'utilizzatore è a conoscenza di quali sono le informazioni scambiate all'interno della propria rete locale, e quali dati rende disponibile ad un eventuale ospite esterno/intruso nella propria Home-Network? 
+	
+	\section[Traffico LAN Prima]{Traffico LAN Prima}
+	Fino a qualche anno fa, all'interno delle nostre reti locali private, la quantità di traffico interno che vi transitava era pressoché nulla, dato che le uniche periferiche che avevano accesso alle rete erano i PC, e l'interazione fra di loro e le applicazioni era minima.
+	
+	I primi a tentare un approccio di \textquotedblleft Autoconfigurazione\textquotedblright e di \textit{interconnessione automatica} furono gli sviluppatori Apple con il loro AppleTalk: in grado di mettere in comunicazione un gruppo di Macs all'interno di una rete locale LAN senza bisogno dell'intervento di alcun esperto, senza la necessità di alcun setup di una struttura centrale che coordini o offra servizi per le periferiche, come un server DHCP o di un server DNS. Similmente, in seguito furono sviluppati NetBIOS e IPX, offrendo la medesima possibilità di interconnettere dispositivi che implementassero i suddetti protocolli.
+	
+	Con l'avvento dello standard(tutt'oggi ancora NON definitivo) denominato \textbf{\textit{Zeroconf}}, nato dall'idea di AppleTalk, si sono susseguite numerose implementazioni e copiosi utilizzi del concetto di \textit{autoconfigurazione} e 0 intervento esterno/strutture centrali per la configurazione e il coordinamento fra applicazioni/dispositivi. I primi a trarne vantaggio e trovarne subito un pratico utilizzo furono i costruttori di stampanti e, in generale, di dispositivi utilizzati in ufficio, non avendo avuto fino a quel momento la possibilità di includere interfacce utente per configurare manualmente le macchine, e quindi rendendo impossibile un agevole utilizzo di tali apparecchi all'interno della rete Aziendale/Domestica.
+	
+	\newpage
+	\section[Traffico LAN Oggi]{Cosa transita all'interno delle NOSTRE Reti?}
+	\section[Il mio Lavoro]{analisi mDNS e DB-lsp-DISC}
+	Qui descrivo in breve che ho fatto: ... 
+	
+	\chapter[Broadcast/Multicast LAN]{Accenni a protocolli Broadcast/Multicast nelle reti Locali}
+	\section[Zeroconf]{Zeroconf title}
+	\subsection[AppleTalk]{AppleTalk title}
+	\subsection[Implementazioni]{Implementazioni}
+	\subsubsection[Bonjour]{Bonjour title}
+	\subsubsection[Avahi]{Avahi title}
+	
+	\section[UPnP]{UPnP title} 
+	\subsection[ssdp]{Simple Service Discovery Protocol}
+	
+	\section[mDNS]{mDNS title}
+	\subsection[mDNS-SD]{mDNS-SD title}
+	\subsubsection[Service1]{ Service1 title}
+	\subsubsection[Service2]{ Service2 title}
+	\subsubsection[Service...]{ Service... title}
+	
+	\section[DB-LSP-DISC]{DropBox LSP DISCovery title}
+	
+	\chapter[Mio Lavoro]{Il mio lavoro}
+	Lo scopo di questo lavoro è mostrare le vulnerabilità delle reti locali in termini di dati sensibili e privati, cercando di acquisire il maggior numero di informazioni possibili riguardo i nodi della rete, in modo completamente passivo, e identificando quali dispositivi sono connessi attualmente alla Rete Locale a cui abbiamo accesso. Questo mette in evidenza quante e quali informazioni vengono scambiate all'interno della rete, rendendo consapevoli gli utilizzatori di tale rete, di quali saranno le informazioni private che verranno diffuse tramite i loro dispositivi ad essa collegati. Grazie a tale consapevolezza, chi è addetto alla gestione della rete può decidere eventualmente di separare il traffico in sotto-reti isolate, in modo tale da arginare eventuali diffusioni di informazioni sensibili, pur mantenendo e usufruendo di tutti i vantaggi che una comunicazione Broadcast/Multicast fra dispositivi in una rete locale comporta: per esempio auto-configurazione e scambio rapido di informazioni all'interno della rete locale, limitandole a quest'ultima ... ??? .   
+	
+	
+	\section{Strumenti usati}
+	Il mio lavoro è stato reso possibile grazie ad un wrapper di tshark scritto in python chiamato \textit{pyshark}, il quale fornisce delle funzioni d'interfaccia che permettono di catturare/leggere file di cattura ???  , ed accedere ai campi che compongono i vari pacchetti, estraendo informazioni utili.
+	
+	\textit{Pyshark} è un wrapper per tshark, reperibile sulla piattaforma GitHub ... .
+	Non è propriamente un dissector, come molti altri, ma si limita a usare la funzionalità di tshark di esportare XMLs per usare il suo parsing. 
+	
+	\textit{WireShark} (\textit{TShark})è un software gratuito che permette di catturare il traffico della rete che transita sulla propria scheda di rete, senza la necessità porsi in punti di snodo \textquotedblleft centrali\textquotedblright, come Router o Accesspoint. Questo limita molto il traffico dati catturabile, ma permette comunque di ottenere informazioni su tutti i pacchetti inviati a altri dispositivi in Broadcast/Multicast, che per i nostri scopi è sufficiente.
+	Mette in condizioni di non rendere visibile al resto della rete che si sta analizzando del traffico dati ... ??? .
+	\textit{Tshark}, nello specifico, è una utility \textquotedblleft a linea di comando\textquotedblright\space di Wireshark, che utilizza quindi il core del programma principale, offrendo le medesime funzionalità
+	
+	\section[mDNS]{mDNS Response dissection \& study title}
+	\section[DB-LSP-DISC]{Dropbox namespaces title}
+	
+	\chapter[Conclusioni]{Conclusioni}
+	\section{Lavori Futuri}
+	
+\end{document}

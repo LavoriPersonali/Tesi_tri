@@ -1,0 +1,26 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{\numberline {1}Introduzione}{5}
+\contentsline {section}{\numberline {1.1}Traffico LAN Prima}{6}
+\contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{7}
+\contentsline {section}{\numberline {1.3}Il mio Lavoro}{7}
+\contentsline {chapter}{\numberline {2}Broadcast/Multicast LAN}{9}
+\contentsline {section}{\numberline {2.1}Zeroconf}{9}
+\contentsline {subsection}{\numberline {2.1.1}AppleTalk}{9}
+\contentsline {subsection}{\numberline {2.1.2}Implementazioni}{9}
+\contentsline {subsubsection}{Bonjour}{9}
+\contentsline {subsubsection}{Avahi}{9}
+\contentsline {section}{\numberline {2.2}UPnP}{9}
+\contentsline {subsection}{\numberline {2.2.1}ssdp}{9}
+\contentsline {section}{\numberline {2.3}mDNS}{9}
+\contentsline {subsection}{\numberline {2.3.1}mDNS-SD}{9}
+\contentsline {subsubsection}{Service1}{9}
+\contentsline {subsubsection}{Service2}{9}
+\contentsline {subsubsection}{Service...}{9}
+\contentsline {section}{\numberline {2.4}DB-LSP-DISC}{9}
+\contentsline {chapter}{\numberline {3}Mio Lavoro}{11}
+\contentsline {section}{\numberline {3.1}Strumenti usati}{11}
+\contentsline {section}{\numberline {3.2}mDNS}{12}
+\contentsline {section}{\numberline {3.3}DB-LSP-DISC}{12}
+\contentsline {chapter}{\numberline {4}Conclusioni}{13}
+\contentsline {section}{\numberline {4.1}Lavori Futuri}{13}
