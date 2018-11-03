@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  30 OCT 2018 17:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  2 NOV 2018 19:14
 entering extended mode
 **./TestoTesi.tex
 (TestoTesi.tex
@@ -281,47 +281,55 @@ Capitolo 1.
 
 ] [6] [7] [8]
 Capitolo 2.
-[9
 
-] [10
+Underfull \vbox (badness 2126) has occurred while \output is active []
+
+ [9
+
+]
+[10] [11] [12
 
 ]
 Capitolo 3.
-[11] [12
-
-]
-Capitolo 4.
 [13] [14
 
 ]
-Capitolo 5.
+Capitolo 4.
 [15] [16
 
 ]
+Capitolo 5.
+[17] [18
+
+]
 Capitolo 6.
-[17] (TestoTesi.aux) ) 
+[19] (TestoTesi.aux) ) 
 Here is how much of TeX's memory you used:
- 3521 strings out of 492973
- 44846 string characters out of 3135926
- 121449 words of memory out of 3000000
- 7321 multiletter control sequences out of 15000+200000
- 19259 words of font info for 54 fonts, out of 3000000 for 9000
+ 3532 strings out of 492973
+ 44848 string characters out of 3135926
+ 122449 words of memory out of 3000000
+ 7327 multiletter control sequences out of 15000+200000
+ 22199 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,1124b,202s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,25p,1124b,202s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
-ur\jknappen\ec\dpi600\ecbi1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Edoardo\AppData\Local\
-MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\Edoardo\Ap
-pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\User
-s\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.
+ur\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\Edoardo\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Edoardo\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1200.pk> <C:\User
+s\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.
 pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
-00\ecbx1728.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
-ppen\ec\dpi600\ecrm1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk>
-Output written on TestoTesi.pdf (17 pages, 122707 bytes).
+00\ecsl1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
+ppen\ec\dpi600\ecbx1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk
+\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Edoardo\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Edoar
+do\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:
+\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm
+2074.pk>
+Output written on TestoTesi.pdf (19 pages, 136761 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
+ 404 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

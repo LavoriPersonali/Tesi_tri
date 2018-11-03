@@ -53,17 +53,36 @@
 	Come risultato di tale studio, è stato implementato uno strumento per l'analisi automatica di una rete locale, in grado di fornire informazioni più o meno dettagliate riguardo la topologia della rete, alla quale si ha libero accesso, e quindi identificando tutti quei dispositivi che annunciano e offrono servizi al suo interno: Dispositivi Mobili, Stampanti, Workstation di vario genere e Media-devices.
 	
 	\chapter[Il mio Lavoro]{Lavoro: Analisi mDNS e DB-lsp-DISC}
-	Il lavoro di tesi è partito da una raccolta di tutti quei protocolli di rete che utilizzassero lo scambio di pacchetti Multicast e Broadcast locale. 
+	Il lavoro di tesi è partito da una raccolta di tutti quei protocolli di rete che utilizzassero lo scambio di pacchetti Multicast e Broadcast locale. ...
+	Un primo approccio è stato il documentarsi riguardo gli indirizzi ufficialmente registrati per le comunicazioni Multicast LAN, e come risultato ho scoperto alcuni protocolli interessanti ... sono un'infinità!
+	La ricerca mi ha portato alla scoperta di vari protocolli, alcuni simili tra loro, ...
+	Il primo incontrato ...
+	
+	Difronte ad una quantità enorme di protocolli, ho optato per un'approccio più pratico per verificare quali di tutti quei protocolli generassero pacchetti nelle nostre reti casalinghe o aziendali, catturando il traffico con uno strumento Open-Source chiamato Wireshark\footnote{descritto in seguito}. Ho quindi iniziato ad effettuare catture di pacchetti in svariate reti alle quali ho abituale accesso, filtrando il traffico ottenuto, tenendo quindi solo tutti quei pacchetti aventi come indirizzo di destinazione un indirizzo Broadcast (255.255.255.255) o Multicast (in range 224.0.0.0 fino a 239.255.255.255).
+	Un'ulteriore scrematura preliminare dei pacchetti catturati è stata quella per escludere tutti quei pacchetti che venissero utilizzati da protocolli di rete adibiti alla configurazione e gestione della rete stessa, come per esempio i pacchetti ARP, ICMPv6, DHCPv6, e simili, quindi non contenenti informazioni rilevanti sulla natura dei dispositivi che li diffondono.
+	
+	All'interno del traffico restante, ho iniziato a raccogliere informazioni riguardo tutti i protocolli di livello applicativo restanti, valutando se le informazioni che contenevano potessero essere rilevanti ai nostri scopi.
+	
+	1- Link-local Multicast Name Resolution:
+	LLMNR è un protocollo che permette la risoluzione di indirizzi Ipv4 o IPv6 a partire dai nomi locali senza la necessità di un'entità centrale come un server DNS. Ci sono svariati altri protocolli che svolgono la medesima vunzione di risoluzione nomi DNS, e questo è stato pensato per sostituire l'entità centrale, e supportare anche l'utilizzo di IPv6. 
+	Questo protocollo non si è rivelato utile allo scopo di rivelare la natura o informazioni utili sui dispositivi nella rete, perché nelle catture effettuate sono risultati solo pacchetti contenenti query, e quindi richieste per la risoluzione di nomi per ottenere l'indirizzo IP, senza la risposta a conferma che quell'effettivo host sia collegato in quel momento alla rete. Questo è dovuto dal funzionamento dello stesso protocollo: un'host manda in multicast la richiesta per isolvere un nome, se un'altro host in ascolto è ?autoritativo? per quel nome, inoltra la richiesta in unicast direttamente a chi ha fatto domanda di risoluzione; quindi, per lo strumento utilizzato per la cattura del traffico, non è possibile reperire pacchetti che non siano direttamente indirizzati alla macchina sulla quale si sta facendo girare Wireshark, oppure traffico multicast/Broadcast.
+	
+	2- NetBIOS-NS
+	Name Service(NS) è un servizio del protocollo NetBIOS, ideato da IBM e Sytec per la PC-Network\footnote{Tipo di rete locale} all'inizio degli anni Ottanta, e che con l'avvento delle reti standard è stato adattato(ma non abbandonato) per lavorare su altri protocolli, come TCP/IP\footnote{chiamato anche NBT o NetBT}. NBNS è un'altro servizio che si occupa della registrazione e risoluzione dei Nomi nelle reti locali, rientra tra i primi servizi distribuiti atti a svolgere tale compito. Il suo funzionamento si divide in 2 fasi: Registrazione, nella quale un nuovo nodo si registra con un nome unico all'interno della rete, verificando prima che non vi sia quindi un'altro host già registrato con lo stesso nome, e Risoluzione, con la quale un nodo della rete richiede un indirizzo IP a partire da un nome simbolico locale. 
+	Studiando le informazioni contenute nei pacchetti catturati, oltre alle solite querys per la risoluzione dei nomi, si trovano anche pacchetti contenenti le richieste di registrazione dei vari nodi appena collegati, che li identificano univocamente all'interno della rete locale, e quindi fornendo un'utile(in alcuni casi) informazione riguardo la macchina: ovvero un'host che ha al suoi interno il protocollo NetBIOS in funzione. 
+	Pur essendo molto interessante, NBNS non è stato usato in questo lavoro di tesi, sia per mancanza di tempo in relazione alle informazioni fornite, sia perché è stato identificato un'altro protocollo che offre ulteriori dettagli sui dispositivi che lo utilizzano, e anche i nomi degli stessi dispositivi. 
+	
+	
+	3- Microsoft Windows Browser Protocol
 	
 	
 	- mDNS(per la stragrande maggioranza, annunciando servizi come spotify, Chromecast, ecc..., e dando varie info sui nomi degli utenti e delle macchine su cui girano), 
-	- NetBIOS-NS, 
-	- Link-local Multicast Name Resolution, 
+	- , 
+	- , 
 	- Dropbox LAN sync Discovery Protocol, 
-	- Microsoft Windows Browser Protocol, 
+	- , 
 	- Link Layer Discovery Protocol, 
 	- pacchetto UDP con porta destinataria 57621 usato per la rete locale P2P di spotify.
-	
 	\chapter[Stato dell'Arte]{Che hanno fatto l'altri?}
 	
 	\chapter[Implementazione]{Dettagli di Implementazione}
