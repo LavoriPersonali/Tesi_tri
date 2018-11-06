@@ -5,10 +5,10 @@
 \contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{7}
 \contentsline {section}{\numberline {1.3}Obiettivo}{7}
 \contentsline {chapter}{\numberline {2}Il mio Lavoro}{9}
-\contentsline {chapter}{\numberline {3}Stato dell'Arte}{13}
-\contentsline {chapter}{\numberline {4}Implementazione}{15}
-\contentsline {section}{\numberline {4.1}Strumenti usati}{15}
-\contentsline {section}{\numberline {4.2}mDNS}{15}
-\contentsline {section}{\numberline {4.3}DB-LSP-DISC}{15}
-\contentsline {chapter}{\numberline {5}Lavori Futuri}{17}
-\contentsline {chapter}{\numberline {6}Conclusioni}{19}
+\contentsline {chapter}{\numberline {3}Stato dell'Arte}{15}
+\contentsline {chapter}{\numberline {4}Implementazione}{17}
+\contentsline {section}{\numberline {4.1}Strumenti usati}{17}
+\contentsline {section}{\numberline {4.2}mDNS}{17}
+\contentsline {section}{\numberline {4.3}DB-LSP-DISC}{17}
+\contentsline {chapter}{\numberline {5}Lavori Futuri}{19}
+\contentsline {chapter}{\numberline {6}Conclusioni}{21}
