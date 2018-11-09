@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  6 NOV 2018 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  9 NOV 2018 21:07
 entering extended mode
 **./TestoTesi.tex
 (TestoTesi.tex
@@ -292,23 +292,48 @@ Overfull \hbox (3.55893pt too wide) in paragraph at lines 77--82
 r/m/n/12 ; \T1/cmr/m/it/12 'Local-Master'/Host/Request/'Domain-
  []
 
-[10] [11] [12] [13] [14
+[10] [11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 135--140
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+
+ []
+
+[18] [19] [20
 
 ]
 Capitolo 3.
-[15] [16
+[21] [22
 
 ]
 Capitolo 4.
-[17] [18
+[23] [24
 
 ]
 Capitolo 5.
-[19] [20
+[25] [26
 
 ]
 Capitolo 6.
-(TestoTesi.bbl [21] [22
+(TestoTesi.bbl [27] [28
 
 ]
 Underfull \hbox (badness 2057) in paragraph at lines 10--13
@@ -327,15 +352,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--29
 \T1/cmr/m/n/12 registry.[https://www.iana.org/assignments/service-names-port-
  []
 
-) [23] (TestoTesi.aux) ) 
+) [29] (TestoTesi.aux) ) 
 Here is how much of TeX's memory you used:
  3541 strings out of 492973
  44946 string characters out of 3135926
- 128473 words of memory out of 3000000
+ 129473 words of memory out of 3000000
  7333 multiletter control sequences out of 15000+200000
  22199 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,25p,1389b,208s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,25p,1802b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\lj
 four\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9
 \fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\Edoardo\AppData\Loca
@@ -351,9 +376,9 @@ X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Edoardo\AppData
 ardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <
 C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
 rm2074.pk>
-Output written on TestoTesi.pdf (23 pages, 159830 bytes).
+Output written on TestoTesi.pdf (29 pages, 181755 bytes).
 PDF statistics:
- 454 PDF objects out of 1000 (max. 8388607)
+ 489 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
