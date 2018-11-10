@@ -33,4 +33,15 @@ Fabian~Weisshaar Michael~Faath, Rolf~Winter.
 \newblock {\em 2016 International Wireless Communications and Mobile Computing
   Conference (IWCMC)}, 2016.
 
+\bibitem{z2z}
+Wolfgang~Kellerer** Jae Woo~Lee*, Henning~Schulzrinne* and Zoran Despotovic**.
+\newblock {\em z2z: Discovering Zeroconf Services Beyond Local Link}.
+\newblock \\ * Department of Computer Science, Columbia University, New York,
+  USA\\ ** DoCoMo Communications Laboratories Europe, Munich, Germany.
+
+\bibitem{SPRBOOT}
+Pivotal Software.
+\newblock Spring boot. [online]. \\available:
+  https://projects.spring.io/spring-boot/.
+
 \end{thebibliography}

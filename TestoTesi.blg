@@ -1,6 +1,12 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: TestoTesi.aux
 The style file: unsrt.bst
 Database file #1: bibliografia.bib
+I was expecting a `,' or a `}'---line 80 of file bibliografia.bib
+ :  
+ :  address   = "Department of Computer Science, Columbia University, New York, USA; DoCoMo Communications Laboratories Europe, Munich, Germany"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Too many commas in name 1 of "Internet Engineering Task Force (IETF), S. Cheshire, M. Krochmal, Apple Inc." for entry mDNS
 while executing---line 944 of file unsrt.bst
-(There was 1 error message)
+Warning--empty year in z2z
+(There were 2 error messages)

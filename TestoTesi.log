@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  10 NOV 2018 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  10 NOV 2018 20:11
 entering extended mode
 **./TestoTesi.tex
 (TestoTesi.tex
@@ -269,13 +269,9 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 13--21
 \tf@toc=\write3
 \openout3 = `TestoTesi.toc'.
 
-
-Underfull \vbox (badness 2057) has occurred while \output is active []
-
  [3
 
-]
-[4]
+] [4]
 Capitolo 1.
 [5
 
@@ -337,19 +333,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--154
 
 ]
 Capitolo 3.
-[23] [24
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
+
+ []
+
+[24] [25] [26]
 Capitolo 4.
-[25] [26
+[27
+
+] [28
 
 ]
 Capitolo 5.
-[27] [28
+[29] [30
 
 ]
 Capitolo 6.
-(TestoTesi.bbl [29] [30
+(TestoTesi.bbl [31] [32
 
 ]
 Underfull \hbox (badness 2057) in paragraph at lines 10--13
@@ -368,12 +374,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--29
 \T1/cmr/m/n/12 registry.[https://www.iana.org/assignments/service-names-port-
  []
 
-) [31] (TestoTesi.aux) ) 
+) [33] (TestoTesi.aux) ) 
 Here is how much of TeX's memory you used:
- 3543 strings out of 492973
- 44970 string characters out of 3135926
- 130473 words of memory out of 3000000
- 7334 multiletter control sequences out of 15000+200000
+ 3545 strings out of 492973
+ 44984 string characters out of 3135926
+ 130481 words of memory out of 3000000
+ 7336 multiletter control sequences out of 15000+200000
  22974 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,8n,25p,1802b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -393,9 +399,9 @@ ardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <
 C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
 rm1440.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecrm2074.pk>
-Output written on TestoTesi.pdf (31 pages, 207648 bytes).
+Output written on TestoTesi.pdf (33 pages, 222469 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
+ 574 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
