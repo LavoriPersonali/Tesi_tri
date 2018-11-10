@@ -5,10 +5,19 @@
 \contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{7}
 \contentsline {section}{\numberline {1.3}Obiettivo}{7}
 \contentsline {chapter}{\numberline {2}Il mio Lavoro}{9}
-\contentsline {chapter}{\numberline {3}Stato dell'Arte}{21}
-\contentsline {chapter}{\numberline {4}Implementazione}{23}
-\contentsline {section}{\numberline {4.1}Strumenti usati}{23}
-\contentsline {section}{\numberline {4.2}mDNS}{23}
-\contentsline {section}{\numberline {4.3}DB-LSP-DISC}{23}
-\contentsline {chapter}{\numberline {5}Lavori Futuri}{25}
-\contentsline {chapter}{\numberline {6}Conclusioni}{27}
+\contentsline {section}{\numberline {2.1}Protocolli Multicast/Broadcast}{10}
+\contentsline {subsection}{\numberline {2.1.1}Link-local Multicast Name Resolution}{10}
+\contentsline {subsection}{\numberline {2.1.2}NetBIOS-NS}{10}
+\contentsline {subsection}{\numberline {2.1.3}Microsoft Windows Browser Protocol}{11}
+\contentsline {subsection}{\numberline {2.1.4}Multicast DNS-(Service Discovery)}{12}
+\contentsline {subsection}{\numberline {2.1.5}Dropbox LAN sync Discovery Protocol}{13}
+\contentsline {section}{\numberline {2.2}Panoramica del Lavoro}{13}
+\contentsline {subsection}{\numberline {2.2.1}Funzionamento}{14}
+\contentsline {section}{\numberline {2.3}Pro e Contro Soluzione}{19}
+\contentsline {chapter}{\numberline {3}Stato dell'Arte}{23}
+\contentsline {chapter}{\numberline {4}Implementazione}{25}
+\contentsline {section}{\numberline {4.1}Strumenti usati}{25}
+\contentsline {section}{\numberline {4.2}mDNS}{25}
+\contentsline {section}{\numberline {4.3}DB-LSP-DISC}{25}
+\contentsline {chapter}{\numberline {5}Lavori Futuri}{27}
+\contentsline {chapter}{\numberline {6}Conclusioni}{29}

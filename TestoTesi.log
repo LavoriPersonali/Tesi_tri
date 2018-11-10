@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  9 NOV 2018 21:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  10 NOV 2018 14:34
 entering extended mode
 **./TestoTesi.tex
 (TestoTesi.tex
@@ -270,7 +270,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 13--21
 \openout3 = `TestoTesi.toc'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2057) has occurred while \output is active []
 
  [3
 
@@ -282,58 +282,74 @@ Capitolo 1.
 ] [6] [7] [8]
 Capitolo 2.
 
-Underfull \vbox (badness 2126) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9
 
 ]
-Overfull \hbox (3.55893pt too wide) in paragraph at lines 77--82
+[10]
+Overfull \hbox (3.55893pt too wide) in paragraph at lines 78--82
 \T1/cmr/m/n/12 da svol-ge-re; \T1/cmr/m/it/12 Get Bac-kup Li-st Re-que-st\T1/cm
 r/m/n/12 ; \T1/cmr/m/it/12 'Local-Master'/Host/Request/'Domain-
  []
 
-[10] [11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
+[11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 121--123
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 135--140
+Underfull \hbox (badness 10000) in paragraph at lines 136--141
 
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 141--143
+[17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 142--144
 
  []
 
-[18] [19] [20
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 150--154
+
+ []
+
+[20] [21] [22
 
 ]
 Capitolo 3.
-[21] [22
-
-]
-Capitolo 4.
 [23] [24
 
 ]
-Capitolo 5.
+Capitolo 4.
 [25] [26
 
 ]
+Capitolo 5.
+[27] [28
+
+]
 Capitolo 6.
-(TestoTesi.bbl [27] [28
+(TestoTesi.bbl [29] [30
 
 ]
 Underfull \hbox (badness 2057) in paragraph at lines 10--13
@@ -352,33 +368,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--29
 \T1/cmr/m/n/12 registry.[https://www.iana.org/assignments/service-names-port-
  []
 
-) [29] (TestoTesi.aux) ) 
+) [31] (TestoTesi.aux) ) 
 Here is how much of TeX's memory you used:
- 3541 strings out of 492973
- 44946 string characters out of 3135926
- 129473 words of memory out of 3000000
- 7333 multiletter control sequences out of 15000+200000
- 22199 words of font info for 60 fonts, out of 3000000 for 9000
+ 3543 strings out of 492973
+ 44970 string characters out of 3135926
+ 130473 words of memory out of 3000000
+ 7334 multiletter control sequences out of 15000+200000
+ 22974 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,25p,1802b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,25p,1802b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\lj
-four\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9
-\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\Edoardo\AppData\Loca
-l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Edoardo\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1200.pk> <C:\Us
-ers\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti120
+four\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9
+\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Edoardo\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\Edoardo\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Us
+ers\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi120
 0.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dp
-i600\ecsl1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\ecbx1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\
-pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Edoardo\AppData\Local\MiKTe
-X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Edoardo\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Edo
-ardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <
+i600\ecti1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+nappen\ec\dpi600\ecsl1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Edoardo\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Edo
+ardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <
 C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-rm2074.pk>
-Output written on TestoTesi.pdf (29 pages, 181755 bytes).
+rm1440.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecrm2074.pk>
+Output written on TestoTesi.pdf (31 pages, 207648 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
+ 551 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
