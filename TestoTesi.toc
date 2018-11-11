@@ -1,26 +1,27 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {chapter}{\numberline {1}Introduzione}{5}
-\contentsline {section}{\numberline {1.1}Traffico LAN Prima}{6}
-\contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{7}
-\contentsline {section}{\numberline {1.3}Obiettivo}{7}
-\contentsline {chapter}{\numberline {2}Il mio Lavoro}{9}
-\contentsline {section}{\numberline {2.1}Protocolli Multicast/Broadcast}{10}
-\contentsline {subsection}{\numberline {2.1.1}Link-local Multicast Name Resolution}{10}
-\contentsline {subsection}{\numberline {2.1.2}NetBIOS-NS}{10}
-\contentsline {subsection}{\numberline {2.1.3}Microsoft Windows Browser Protocol}{11}
-\contentsline {subsection}{\numberline {2.1.4}Multicast DNS-(Service Discovery)}{12}
-\contentsline {subsection}{\numberline {2.1.5}Dropbox LAN sync Discovery Protocol}{13}
-\contentsline {section}{\numberline {2.2}Panoramica del Lavoro}{13}
-\contentsline {subsection}{\numberline {2.2.1}Funzionamento}{14}
-\contentsline {section}{\numberline {2.3}Pro e Contro Soluzione}{19}
-\contentsline {chapter}{\numberline {3}Stato dell'Arte}{23}
-\contentsline {section}{\numberline {3.1}z2z}{23}
-\contentsline {section}{\numberline {3.2}Privacy mDNS}{24}
-\contentsline {section}{\numberline {3.3}Broadcast Data Study}{25}
-\contentsline {chapter}{\numberline {4}Implementazione}{27}
-\contentsline {section}{\numberline {4.1}Strumenti usati}{27}
-\contentsline {section}{\numberline {4.2}mDNS}{27}
-\contentsline {section}{\numberline {4.3}DB-LSP-DISC}{27}
-\contentsline {chapter}{\numberline {5}Lavori Futuri}{29}
-\contentsline {chapter}{\numberline {6}Conclusioni}{31}
+\contentsline {chapter}{\numberline {1}Introduzione}{7}
+\contentsline {section}{\numberline {1.1}Traffico LAN Prima}{8}
+\contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{9}
+\contentsline {section}{\numberline {1.3}Obiettivo}{9}
+\contentsline {chapter}{\numberline {2}Il mio Lavoro}{11}
+\contentsline {section}{\numberline {2.1}Protocolli Multicast/Broadcast}{12}
+\contentsline {subsection}{\numberline {2.1.1}Link-local Multicast Name Resolution}{12}
+\contentsline {subsection}{\numberline {2.1.2}NetBIOS-NS}{12}
+\contentsline {subsection}{\numberline {2.1.3}Microsoft Windows Browser Protocol}{13}
+\contentsline {subsection}{\numberline {2.1.4}Multicast DNS-(Service Discovery)}{14}
+\contentsline {subsection}{\numberline {2.1.5}Dropbox LAN sync Discovery Protocol}{15}
+\contentsline {section}{\numberline {2.2}Panoramica del Lavoro}{15}
+\contentsline {subsection}{\numberline {2.2.1}Funzionamento}{16}
+\contentsline {section}{\numberline {2.3}Pro e Contro Soluzione}{21}
+\contentsline {chapter}{\numberline {3}Stato dell'Arte}{25}
+\contentsline {section}{\numberline {3.1}z2z}{25}
+\contentsline {section}{\numberline {3.2}Privacy mDNS}{26}
+\contentsline {section}{\numberline {3.3}Broadcast Data Study}{27}
+\contentsline {section}{\numberline {3.4}Arginare il problema della Privacy}{28}
+\contentsline {chapter}{\numberline {4}Implementazione}{31}
+\contentsline {section}{\numberline {4.1}Strumenti usati}{31}
+\contentsline {section}{\numberline {4.2}mDNS}{31}
+\contentsline {section}{\numberline {4.3}DB-LSP-DISC}{31}
+\contentsline {chapter}{\numberline {5}Lavori Futuri}{33}
+\contentsline {chapter}{\numberline {6}Conclusioni}{35}

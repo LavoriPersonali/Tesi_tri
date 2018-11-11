@@ -44,4 +44,11 @@ Pivotal Software.
 \newblock Spring boot. [online]. \\available:
   https://projects.spring.io/spring-boot/.
 
+\bibitem{privAdd1}
+Daniel Kaiser and Marcel Waldvogel.
+\newblock Adding privacy to multicast dns service discovery.
+\newblock {\em IEEE, 2014 IEEE 13th International Conference on Trust, Security
+  and Privacy in Computing and Communications}, pages 809--816, 24-26 Sept.
+  2014.
+
 \end{thebibliography}
