@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\newcommand{\qts}[1]{``#1''}
 \author{Edoardo Maione}
 \title{Qui va il Titolo}
 \begin{document}
@@ -82,7 +83,7 @@
 	
 	
 	\subsection{Multicast DNS-(Service Discovery)}
-	mDNS\cite{mDNS} è un protocollo che si pone a sostituzione di un normale DNS centrale, dove magari in una piccola rete non vi è la possibilità/necessità di averne uno. In pratica si occupa di risolvere i nomi locali, con estensione ?.local?, tramite una richiesta da parte dell'host ad un indirizzo multicast(IPv4 224.0.0.251 / IPv6 ff02::fb), porta UDP 5353, inviando un messaggio dello stesso formato delle query DNS, ed ottenendo risposta, sempre in multicast, da un qualsiasi dispositivo(solitamente chi possiede il nome richiesto) che conosce l'indirizzo IP corrispondente. \\
+	mDNS\cite{mDNS} è un protocollo che si pone a sostituzione di un normale DNS centrale, dove magari in una piccola rete non vi è la possibilità/necessità di averne uno. In pratica si occupa di risolvere i nomi locali, con estensione \qts{.local}, tramite una richiesta da parte dell'host ad un indirizzo multicast(IPv4 224.0.0.251 / IPv6 ff02::fb), porta UDP 5353, inviando un messaggio dello stesso formato delle query DNS, ed ottenendo risposta, sempre in multicast, da un qualsiasi dispositivo(solitamente chi possiede il nome richiesto) che conosce l'indirizzo IP corrispondente. \\
 	Avendo la stessa struttura del protocollo DNS, oltre che alla risoluzione dei nomi, mDNS implementa anche il meccanismo DNS-Service Discovery\cite{privMDNS}, il quale permette la scoperta di istanze con nome di servizi nella rete locale, usando le querys standard DNS. Ogni servizio è identificato tramite un nome composto in notazione 'puntata', conforme al meccanismo gerarchico di nomi DNS, il quale è così suddiviso: \textit{Istanza.Servizio.Dominio}. \textit{Istanza} identifica univocamente il particolare dispositivo che offre il relativo \textit{Servizio}, che a sua volta identifica il Tipo specifico di servizio offerto e il protocollo usato, ed in fine il \textit{Dominio} riporta lo specifico dominio all'interno del quale il servizio è offerto (nel caso di mDNS è sempre '.local'). Per quanto riguarda i vari Tipi di servizi offerti in rete, IANA fornisce una lista\cite{IANA} dei servizi ad oggi registrati, ed offre la possibilità di registrarne di propri, ma è comunque possibile utilizzare anche tipi non registrati e proprietari, senza la necessità di registrarne il nome.\\
 	Ogni dispositivo che vuole condividere/offrire un servizio, annuncia in multicast mDNS i record DNS-SRV e DNS-TXT. I record SRV riportano il nome, come descritto in precedenza, \textit{Istanza.Servizio.Dominio},e l'host con porta di destinazione a cui fare riferimento per richiedere il servizio. I record TXT sono opzionali, quindi non tutti i servizi annunciati li diffondono e non tutti i servizi dello stesso tipo rendono noti gli stessi campi, riportano alcuni dettagli del servizio offerto, e molto spesso, anche informazioni riguardo il dispositivo che si rende disponibile ad offrire il servizio. \\
 	Il dispositivo che invece vuole fare richiesta, usufruire, o semplicemente scoprire se il un dato servizio è reperibile, acquisisce la lista dei servizi disponibili effettuando delle query in multicast per ottenere record DNS-PTR, e richiedendo il nome del servizio del tipo: \textit{Servizio.Dominio}. Come risposta, se nella rete è presente un host che ha le informazioni richieste, viene inoltrato in multicast un messaggio mDNS contenente, oltre al PTR che indica il nome completo dell'istanza del servizio, vengono forniti anche i record REV ed eventuali TXT collegati citati in precedenza.\\
@@ -185,19 +186,60 @@
 	Daniel Kaiser and Marcel Waldvogel, autori dell'elaborato \textit{Adding Privacy to Multicast DNS Service Discovery}\cite{privAdd1}, hanno ideato un'estensione nelle comunicazioni DNS-SD per la privacy, la quale permette di nascondere tutte le informazioni sensibili dei record che annunciano i servizi offerti da un host, non necessitando alcuna modifica nella configurazione della rete, limitandosi all'aggiunta di una piccola fase di \textit{pairing} iniziale.\\
 	Dopo la solita analisi di quali informazioni si possono ricavare dai messaggi DNS-SD, è stato deciso di sviluppare uno strumento che, tramite tecniche di crittografia, non appesantisse il protocollo con l'aggiunta di overhead computazionale, e inoltre non comprometta il regolare funzionamento delle applicazioni che usufruiscono del protocollo di Service Discovery, ma che riuscisse comunque a fornire l'oscuramento delle informazioni per tutti gli host non autorizzati. Per permettere ciò, è comunque necessaria una piccola fase iniziale di \textit{pairing} fra i dispositivi che vogliono condividere/richiedere il permesso per l'utilizzo del Servizio: questo è stato implementato tramite lo scambio di informazioni per mezzo di un canale sicuro/esterno alla rete locale, come ad esempio Bluetooth, un QR-Code o NFC, o ancora una email crittografata o un SMS. In questa fase, i 2 host si scambiano tutte quelle informazioni necessarie a decrittare i dati diffusi in rete, rendendo personalizzabile, da parte dell'host che offre il servizio, la decisione di condividere o meno informazioni con gli altri nodi della rete.\\
 	
-	
-	
+	In un'altro lavoro, \textit{User-Friendly, Versatile, and Efficient Multi-Link DNS Service Discovery}\cite{privAdd2} è stato elaborato un modo per fornire capacità multi-link e scalabilità per DNS-SD pur mantenendo la sua semplicità d'uso e l'afficienza. Viene quindi proposta una soluzione Stateless-DNS (DNS-SD/sDNS), che permetta l'autoconfigurazione di Service Discovery spazi di nomi arbitrari, largamente indipendenti dal layout fisico della rete, sfruttando la loro tecnica \textit{statles DNS} e l'algoritmo di consensus Raft\\
+	Non mi sono addentrato nei dettagli di quest'ultimo studio, quindi per ulteriori informazioni riferirsi alla bibliografia di questo elaborato.
 	
 	\chapter[Implementazione]{Dettagli di Implementazione}
 	\section{Strumenti usati}
-	Questo lavoro di tesi, nello specifico lo sviluppo del componente software, è stato reso possibile grazie ad un wrapper di tshark scritto in python chiamato \textit{pyshark}, il quale fornisce delle funzioni d'interfaccia che permettono di catturare/leggere file di cattura ???  , ed accedere ai campi che compongono i vari pacchetti, estraendo informazioni utili.
+	Questo lavoro di tesi, nello specifico lo sviluppo del componente software, è stato reso possibile, oltre a Wireshark, grazie ad un wrapper di tshark scritto in python chiamato \textit{pyshark}, il quale fornisce delle funzioni d'interfaccia che permettono di catturare/leggere file di cattura, ed accedere ai campi che compongono i vari pacchetti, estraendo informazioni utili.\\
+	Lo strumento software invece è stato sviluppato in Python nella versione 3, ed è composto da 4 moduli: DropBox\_utils.py, classFrames.py, discriminators\_sets.py, run\_test.py, i quali verranno descritti in dettaglio in questo capitolo.\\
 	
-	\textit{Pyshark} è un wrapper per tshark, reperibile sulla piattaforma GitHub ... .
-	Non è propriamente un dissector, come molti altri, ma si limita a usare la funzionalità di tshark di esportare XMLs per usare il suo parsing. 
+	\subsection{\textit{WireShark} (\textit{TShark})}
+	Software Open-Source che permette di catturare il traffico di dati che transita sulla scheda di rete della macchina sulla quale è mandato in esecuzione, senza la necessità porsi in punti di snodo \qts{centrali}, come Router o Accesspoint. Questo limita molto il traffico dati catturabile, ma permette comunque di ottenere informazioni su tutti i pacchetti inviati/ricevuti a altri dispositivi in Unicast della macchina sulla quale è in esecuzione Wireshark, ed quindi anche tutti i messaggi inviati/ricevuti in Broadcast/Multicast, che per i nostri scopi è più che sufficiente.
+	Wireshark riesce a \qts{comprendere} la struttura di diversi protocolli di rete, è in grado di individuare eventuali incapsulamenti, riconosce i singoli campi e permette di interpretarne il significato. 
+	Per la cattura dei pacchetti Wireshark non dispone di proprio codice, ma utilizza libpcap/WinPcap, quindi può funzionare solo su reti supportate da libpcap o WinPcap. \\
+	??? Mette in condizioni di non rendere visibile al resto della rete che si sta analizzando del traffico dati ... ???.\\ 
+	\textit{Tshark}, nello specifico, è una utility \qts{a linea di comando} di Wireshark, che utilizza quindi il core del programma principale, offrendo le medesime funzionalità, ed è principalmente usato in tutti quei casi in cui non si necessita di interfaccia grafica, e si richiede output standard(in-line)
 	
-	\textit{WireShark} (\textit{TShark})è un software gratuito che permette di catturare il traffico della rete che transita sulla propria scheda di rete, senza la necessità porsi in punti di snodo \textquotedblleft centrali\textquotedblright, come Router o Accesspoint. Questo limita molto il traffico dati catturabile, ma permette comunque di ottenere informazioni su tutti i pacchetti inviati a altri dispositivi in Broadcast/Multicast, che per i nostri scopi è sufficiente.
-	Mette in condizioni di non rendere visibile al resto della rete che si sta analizzando del traffico dati ... ??? .
-	\textit{Tshark}, nello specifico, è una utility \textquotedblleft a linea di comando\textquotedblright\space di Wireshark, che utilizza quindi il core del programma principale, offrendo le medesime funzionalità
+	\subsection{\textit{Pyshark}} 
+	Wrapper per tshark, reperibile sulla piattaforma GitHub ... .
+	Non è propriamente un dissector, come molti altri, ma si limita a usare la funzionalità di tshark di esportare XMLs per usare il loro parsing. Questo package permette il parsing sia da file di cattura, sia da \qts{catture Live}, utilizzando tutti i dissector di wireshark installati sulla stessa macchina.\\
+	Ai fini di questo lavoro, è stato usato il parsing su file di cattura precedentemente ottenuti, in quanto un analisi della rete il più completa possibile si ha soltanto dopo un certo quantitativo di pacchetti catturati.
+	
+	\subsection{Python 3}
+	Per lo sviluppo del tool di analisi, è stato scelto come linguaggio Python nella versione 3,un linguaggio multi-paradigma, che ha tra i principali obiettivi dinamicità, semplicità e flessibilità. Uno dei motivi che ha portato a sceglierlo come linguaggio da usare, oltre al fatto che supporta la programmazione Object Oriented che permette una maggiore modularità in fase di progettazione e implementazione, è stato il suo supporto nativo a strutture ... hash-table, qui chiamate \textit{dizionari}. Il Dizionario è la struttura che sta alla base dell'intero tool, e permette di raccogliere informazioni ed accedervi rapidamente e intuitivamente per mezzo delle proprie \qts{chiavi}.\\ Inoltre, Python supporta anche un modo d'uso interattivo attraverso il quale è possibile inserire codice direttamente da un terminale, visualizzando immediatamente il risultato. Questo strumento è stato fondamentale, oltre che in fase di sviluppo e di debug, anche a comprendere il funzionamento e le strutture con le quali \textit{Pyshark} raccoglie le informazioni estratte all'interno dei pacchetti dati in input tramite i file di cattura.
+	
+	\section{Il Tool di Analisi: Struttura}
+	Lo strumento sviluppato per la raccolta e l'analisi delle informazioni rilevanti sui dispositivi connessi alla rete è stato strutturato in 3 moduli, ognuno dei quali implementa determinate funzionalità:
+	\begin{itemize}
+		\item[classFrames.py] nel quale sono implementate tutte le classi utili a raccogliere e contenere le informazioni in modo strutturato; inoltre alcune classi implementano le funzioni che svolgono il lavoro di analisi: caratterizzazione e catalogazione dei dispositivi, e interazioni con gli altri nodi della rete.
+		\item[DropBox\_util.py] qui viene implementata, nello specifico, la struttura dati che contiene le informazioni ricavate dai pacchetti Dropbox, e quindi tutti i campi dei messaggi db-lsp-disc.
+		\item[discriminators\_sets.py] in questo modulo sono raccolte tutte quelle strutture(\textit{insiemi} e \textit{dizionari}) utilizzate per categorizzare i dispositivi nelle varie tipologie scelte in questo lavoro. Inoltre, sono presenti anche dizionari utilizzati per identificare con precisione i dispositivi tramite codice di modello e Sistema Operativo, e dizionari di \qts{keyword} spesso ricorrenti all'interno degli hostnames rilevati, anch'essi usati per attribuite un tipo e un ipotetico proprietario al dispositivo.
+		\item[run\_test.py] Questo è il modulo mandato in esecuzione per l'analisi completa del traffico di rete, ed è costituito da una sequenza di istruzioni che, in breve, apre i file di cattura utilizzati per testare l'algoritmo, li analizza passandoli alle funzioni definite negli altri moduli, ed infine stampa a linea di comando i risultati, componendo un'elenco di dispositivi \qts{categorizzati}, seguito da una lista che rappresenta i collegamenti che i suddetti dispositivi hanno fra di loro.
+	\end{itemize}
+
+	Adesso andremo ad analizzare in dettaglio ogni singolo modulo del tool.
+	
+	\subsection{classFrames.py}
+	Introduzione ...
+	\\
+	
+	La classe ...\\
+	...\\
+	...\\
+	\\
+	
+	la classe ...\\
+	...\\
+	...\\
+	\\
+	
+	la classe ...\\
+	...\\
+	...\\
+	\\
+	\subsection{DropBox\_util.py}
+	\subsection{discriminators\_sets.py}
 	
 	\section[mDNS]{mDNS Response dissection \& study }
 	\section[DB-LSP-DISC]{Dropbox namespaces title}

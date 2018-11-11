@@ -9,4 +9,6 @@ I'm skipping whatever remains of this entry
 Too many commas in name 1 of "Internet Engineering Task Force (IETF), S. Cheshire, M. Krochmal, Apple Inc." for entry mDNS
 while executing---line 944 of file unsrt.bst
 Warning--empty year in z2z
-(There were 2 error messages)
+Too many commas in name 1 of "Daniel Kaiser, Marcel Waldvogel, Holger Strittmatter, Oliver Haase" for entry privAdd2
+while executing---line 944 of file unsrt.bst
+(There were 3 error messages)

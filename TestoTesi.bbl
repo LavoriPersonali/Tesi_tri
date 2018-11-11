@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{RFC1001}
 Network~Working Group.
@@ -50,5 +50,12 @@ Daniel Kaiser and Marcel Waldvogel.
 \newblock {\em IEEE, 2014 IEEE 13th International Conference on Trust, Security
   and Privacy in Computing and Communications}, pages 809--816, 24-26 Sept.
   2014.
+
+\bibitem{privAdd2}
+Holger Strittmatter Oliver~Haase Daniel~Kaiser, Marcel~Waldvogel.
+\newblock User-friendly, versatile, and efficient multi-link dns service
+  discovery.
+\newblock {\em IEEE, 2016 IEEE 36th International Conference on Distributed
+  Computing Systems Workshops}, pages 146--155, 27-30 June 2016.
 
 \end{thebibliography}
