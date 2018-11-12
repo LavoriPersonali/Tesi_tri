@@ -221,15 +221,12 @@
 	Adesso andremo ad analizzare in dettaglio ogni singolo modulo del tool.
 	
 	\subsection{classFrames.py}
-	Introduzione ...
+	In questo modulo, come già accennato, sono presenti tutte le classi utilizzate per raccogliere in maniera strutturata le informazioni mDNS e analizzarle insieme ai dati ricavati dal protocollo Dropbox
 	\\
 	
-	La classe ...\\
-	...\\
-	...\\
-	\\
+	La classe \textit{Target}, rappresentazione strutturata di un target, con le relative porte, al quale riferirsi per fruire di un servizio annunciato nella rete locale. Offre metodi per aggiornare il numero delle porte e getter per reperire le informazioni.\\
 	
-	la classe ...\\
+	La classe \textit{ServiceMDNS} racchiude tutte le informazioni carpite dai vari record DNS sparsi in tutti i pacchetti reperiti nella rete, quindi che vanno dal nome completo che identifica Istanza e Tipo, ai campi \textit{TXT} opzionali che forniscono dettagli su di esso.  Oltre alle funzioni di \textit{add\_*} e \textit{update\_*} per aggiornare i dettagli del servizio offerto, è stata implementata una funzione interna di utilità, usata per scomporre il nome \qts{composto} del servizio, ottenendo i campi separati di \textit{Istanza}, \textit{Tipo Servizio}, e \textit{Dominio}(e Protocollo usato). Quest'ultima funzione di utilità è mutuata dal fatto che spesso il dissector usato non separa correttamente queste sezioni del nome, solitamente a causa della stringa della sezione \textit{Istanza} che contiene il carattere \qts{.}, inducendo ad una scorretta scomposizione. Per arginare questo problema, nella funzione implementata, la stringa con il nome completo viene \qts{dissezionata} a partire dalla fine di essa, confidando nel fatto che non è presente il carattere \qts{.} all'interno delle sezioni \textit{Dominio} e \textit{Tipo Protocollo} \\
 	...\\
 	...\\
 	\\

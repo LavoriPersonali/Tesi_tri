@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  11 NOV 2018 20:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  12 NOV 2018 10:18
 entering extended mode
 **./TestoTesi.tex
 (TestoTesi.tex
@@ -378,36 +378,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--226
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--231
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--231
+Underfull \hbox (badness 10000) in paragraph at lines 229--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--236
+Underfull \hbox (badness 10000) in paragraph at lines 229--233
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--236
+Underfull \hbox (badness 10000) in paragraph at lines 234--238
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--241
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--241
-
- []
-
-[33] [34]
+[34]
 Capitolo 5.
 [35
 
@@ -460,9 +455,9 @@ k> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ecrm1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\ecrm1440.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\
 ljfour\jknappen\ec\dpi600\ecrm2074.pk>
-Output written on TestoTesi.pdf (40 pages, 242373 bytes).
+Output written on TestoTesi.pdf (40 pages, 244364 bytes).
 PDF statistics:
- 624 PDF objects out of 1000 (max. 8388607)
+ 626 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
