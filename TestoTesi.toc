@@ -24,11 +24,11 @@
 \contentsline {subsection}{\numberline {4.1.1}\textit {WireShark} (\textit {TShark})}{31}
 \contentsline {subsection}{\numberline {4.1.2}\textit {Pyshark}}{32}
 \contentsline {subsection}{\numberline {4.1.3}Python 3}{32}
-\contentsline {section}{\numberline {4.2}Il Tool di Analisi: Struttura}{32}
+\contentsline {section}{\numberline {4.2}Il Tool di Analisi: Struttura}{33}
 \contentsline {subsection}{\numberline {4.2.1}classFrames.py}{33}
-\contentsline {subsection}{\numberline {4.2.2}DropBox\_util.py}{34}
-\contentsline {subsection}{\numberline {4.2.3}discriminators\_sets.py}{34}
-\contentsline {section}{\numberline {4.3}mDNS}{34}
-\contentsline {section}{\numberline {4.4}DB-LSP-DISC}{34}
-\contentsline {chapter}{\numberline {5}Lavori Futuri}{35}
-\contentsline {chapter}{\numberline {6}Conclusioni}{37}
+\contentsline {subsection}{\numberline {4.2.2}DropBox\_util.py}{36}
+\contentsline {subsection}{\numberline {4.2.3}discriminators\_sets.py}{36}
+\contentsline {section}{\numberline {4.3}mDNS}{36}
+\contentsline {section}{\numberline {4.4}DB-LSP-DISC}{36}
+\contentsline {chapter}{\numberline {5}Lavori Futuri}{37}
+\contentsline {chapter}{\numberline {6}Conclusioni}{39}

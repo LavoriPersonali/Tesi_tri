@@ -106,7 +106,7 @@
 	  
 	In primo luogo, viene effettuata un'analisi e raccolta di dati rilevanti all'interno dei pacchetti mDNS, a seconda della quale viene aggiunto o meno un nuovo dispositivo nella struttura principale, e in seguito vengono raccolte le informazioni reperite dai pacchetti Dropbox, arricchendo le informazioni sui dispositivi già rilevati con lo studio mDNS precedente, oppure aggiunti nuovi dispositivi alla struttura.\\
 	
-	L'analisi di un pacchetto mDNS avviene a partire dal campo MAC-Address sorgente, che identifica il nodo che ha inviato il pacchetto, se presente il Layer mDNS, e in particolare la presenza di record di risposta\footnote{per questa analisi, è stato deciso di prendere come certa la presenza di un servizio solo se un dispositivo annuncia la presenza di tale servizio in un record 'answer'} alle query: qualora uno di questi campi venisse meno, l'analisi del pacchetto mDNS si interrompe.
+	L'analisi di un pacchetto mDNS\label{extract_mDNS_info} avviene a partire dal campo MAC-Address sorgente, che identifica il nodo che ha inviato il pacchetto, se presente il Layer mDNS, e in particolare la presenza di record di risposta\footnote{per questa analisi, è stato deciso di prendere come certa la presenza di un servizio solo se un dispositivo annuncia la presenza di tale servizio in un record 'answer'} alle query: qualora uno di questi campi venisse meno, l'analisi del pacchetto mDNS si interrompe.
 	Utilizzando quindi il MAC-Address del dispositivo, se ne verifica la presenza nella struttura principale: se già presente, viene riferita l'istanza precedentemente rilevata, altrimenti ne viene creata una nuova(ma NON ancora aggiunta alla struttura principale).
 	Dopo aver aggiornato l'eventuale indirizzo IPv4 o IPv6 del dispositivo(che magari potrebbe esser stato riassegnato), parte il vero e proprio studio del pacchetto mDNS. Per ogni record 'risposta', viene verificato se appartiene ad uno dei tipi di record utili al nostro lavoro:
 	\begin{itemize}
@@ -204,7 +204,8 @@
 	\subsection{\textit{Pyshark}} 
 	Wrapper per tshark, reperibile sulla piattaforma GitHub ... .
 	Non è propriamente un dissector, come molti altri, ma si limita a usare la funzionalità di tshark di esportare XMLs per usare il loro parsing. Questo package permette il parsing sia da file di cattura, sia da \qts{catture Live}, utilizzando tutti i dissector di wireshark installati sulla stessa macchina.\\
-	Ai fini di questo lavoro, è stato usato il parsing su file di cattura precedentemente ottenuti, in quanto un analisi della rete il più completa possibile si ha soltanto dopo un certo quantitativo di pacchetti catturati.
+	Ai fini di questo lavoro, è stato usato il parsing su file di cattura precedentemente ottenuti, in quanto un analisi della rete il più completa possibile si ha soltanto dopo un certo quantitativo di pacchetti catturati.\\
+	Ogni pacchetto viene rappresentato da una struttura dati chiamata \textit{Packet}, la quale suddivide il pacchetto in \textit{Layer}, accessibili tramite indice o \qts{nome}. Un \textit{Layer} contiene tutti i campi che un \qts{layer di un pacchetto} possiede, sotto forma di \textit{LayerField}. In fine, un \textit{LayerField} contiene, nel caso in cui il campo contenga una singola informazione, tutti i dati contenuti in un campo di un layer di un pacchetto; nel caso in cui il campo contenga un gruppo di informazioni, per lo più strutturate a sua volta, tale campo viene suddiviso in più \textit{LayerField}s, ognuno dei quali contiene una lista ... un gran casino ???????????????????????????????
 	
 	\subsection{Python 3}
 	Per lo sviluppo del tool di analisi, è stato scelto come linguaggio Python nella versione 3,un linguaggio multi-paradigma, che ha tra i principali obiettivi dinamicità, semplicità e flessibilità. Uno dei motivi che ha portato a sceglierlo come linguaggio da usare, oltre al fatto che supporta la programmazione Object Oriented che permette una maggiore modularità in fase di progettazione e implementazione, è stato il suo supporto nativo a strutture ... hash-table, qui chiamate \textit{dizionari}. Il Dizionario è la struttura che sta alla base dell'intero tool, e permette di raccogliere informazioni ed accedervi rapidamente e intuitivamente per mezzo delle proprie \qts{chiavi}.\\ Inoltre, Python supporta anche un modo d'uso interattivo attraverso il quale è possibile inserire codice direttamente da un terminale, visualizzando immediatamente il risultato. Questo strumento è stato fondamentale, oltre che in fase di sviluppo e di debug, anche a comprendere il funzionamento e le strutture con le quali \textit{Pyshark} raccoglie le informazioni estratte all'interno dei pacchetti dati in input tramite i file di cattura.
@@ -224,17 +225,31 @@
 	In questo modulo, come già accennato, sono presenti tutte le classi utilizzate per raccogliere in maniera strutturata le informazioni mDNS e analizzarle insieme ai dati ricavati dal protocollo Dropbox
 	\\
 	
-	La classe \textit{Target}, rappresentazione strutturata di un target, con le relative porte, al quale riferirsi per fruire di un servizio annunciato nella rete locale. Offre metodi per aggiornare il numero delle porte e getter per reperire le informazioni.\\
+	La classe \textit{Target} è rappresentazione strutturata di un target, con le relative porte, al quale riferirsi per fruire di un servizio annunciato nella rete locale, quindi: \textit{nomeHost.local} e \textit{\#Porta} per connettersi al servizio. Offre metodi per aggiornare il numero delle porte e getter per reperire le informazioni.\\
 	
 	La classe \textit{ServiceMDNS} racchiude tutte le informazioni carpite dai vari record DNS sparsi in tutti i pacchetti reperiti nella rete, quindi che vanno dal nome completo che identifica Istanza e Tipo, ai campi \textit{TXT} opzionali che forniscono dettagli su di esso.  Oltre alle funzioni di \textit{add\_*} e \textit{update\_*} per aggiornare i dettagli del servizio offerto, è stata implementata una funzione interna di utilità, usata per scomporre il nome \qts{composto} del servizio, ottenendo i campi separati di \textit{Istanza}, \textit{Tipo Servizio}, e \textit{Dominio}(e Protocollo usato). Quest'ultima funzione di utilità è mutuata dal fatto che spesso il dissector usato non separa correttamente queste sezioni del nome, solitamente a causa della stringa della sezione \textit{Istanza} che contiene il carattere \qts{.}, inducendo ad una scorretta scomposizione. Per arginare questo problema, nella funzione implementata, la stringa con il nome completo viene \qts{dissezionata} a partire dalla fine di essa, confidando nel fatto che non è presente il carattere \qts{.} all'interno delle sezioni \textit{Dominio} e \textit{Tipo Protocollo} \\
-	...\\
-	...\\
-	\\
 	
-	la classe ...\\
-	...\\
-	...\\
-	\\
+	La classe \textit{Device} è la rappresentazione strutturata di tutte le informazioni ricavate su di un dispositivo. I campi che lo compongono sono: \textit{id}, che ne indica il suo MAC-Address; \textit{kind}, che ne rivela la tipologia, e lo si ottiene a seguito dell'analisi di tutti i servizi offerti da questo particolare nodo; \textit{owner} ne indica il presunto possessore del dispositivo, ricavato dall'elaborazione dell'hostname.local; \textit{lastIPv4} e \textit{lastIPv6} sono gli ultimi indirizzi IP v4/v6 che sono stati associati al nodo(al MAC-Address); \textit{services} è una hash-table nella quali sono raccolti tutti i \textit{ServiceMDNS} che sono stati annunciati dal dispositivo, e sono identificati univocamente dal loro nome completo \textit{Istanza.Tipo.Dominio}; \textit{alias} è un'nsieme dove vengono raccolti tutti gli alias con i quali viene identificato il dispositivo, ovvero dall'hostname.local, ai \textit{nomi\_Istanze} dei vari servizi offerti; \textit{db\_lsp\_disc} contiene la struttura dati custom(descritta nel modulo Dropbox\_utils.py) che racchiude tutte le informazioni ricavate dai pacchetti Dropbox, in particolare contiene l'elenco aggiornato di tutti i namespaces annunciati fino a quel momento.\\
+	Seguono una serie di metodi per aggiornare/aggiungere informazioni riguardanti il dispositivo. In particolare, \textit{add\_alias} è un metodo che, oltre che aggiungere una stringa all'insieme di alias, \qts{ripulisce} la ripulisce e ne riporta il corretto appellativo rimuovendo la parte in cui indica \qts{per quale altro dispositivo sta offrendo il servizio}, ovvero: se un Laptop sta condividendo i servizi di una stampante ad esso collegato, l'alias ricavato dalla stringa \textit{Istanza\_del\_servizio} sarà del tipo \textit{StampanteCondivisa @ Laptop\_hostname}, ottenendo come vero alias \textit{Laptop\_hostname}. \\
+	Il metodo usato per attribuire un tipo al dispositivo è chiamato \textit{update\_kind}, e il suo unico scopo è quello di richiamare i metodi di un'altra casse custom, \textit{whoIsWhat}, descritta a breve.\\
+	
+	La classe \textit{NetworkLAN} implementa la struttura principale che contiene la lista di tutti i dispositivi riconosciuti, e le loro interazioni.\\
+	Principalmente è composta da \textit{devices}, un dizionario con i dispositivi aventi come chiave il loro \textit{id}, e \textit{dorpboxSubNET}, un dizionario(sempre con chiavi gli id dei dispositivi) che contiene le liste di tutti i nodi con cui un dispositivo condivide cartelle Dropbox. Per chiarire il concetto, il dizionario \textit{dorpboxSubNET} ha la seguente struttura:
+	\begin{itemize}
+		\item[\qts{id 1} :] \{Insieme di \textit{id} di tutti i dispositivi con i quali condivide una cartella\}
+		\item[\qts{id 2} :] \{Insieme di \textit{id} di tutti i dispositivi con i quali condivice una cartella\}
+		\item[\qts{id 3} :] \dots
+	\end{itemize}
+	Gli altri due dizionari che fanno parte della classe, \textit{lost\_srv\_propertiese} e \textit{namespaces\_in\_common}, sono delle strutture di supporto ai metodi che adesso andremo ad analizzare:\\
+	\begin{itemize}
+		\item \textbf{\textit{extract\_mDNS\_info}} è il metodo che dato un pacchetto, ne ricava le informazioni mDNS utili al nostro lavoro. Il metodo implementa l'algoritmo a pagina \pageref{extract_mDNS_info}, nella sezione in cui viene descritta l'\textit{analisi di un pacchetto mDNS}. Per quanto riguarda l'implementazione, sono tate utilizzate numerose strutture di utilità(liste) a causa della complessa struttura interna con la quale è stata implementata la classe \textit{Packet} fornita da \textit{Pyshark}: ogni record di risposta NON viene contenuto in una singola struttura dati, ma viene diviso in vari \textit{LayerField}s, ognuno dei quali contiene una lista con tutti i sotto-campi dello stesso tipo.\\
+		Per chiarire:\\
+		Se un pacchetto contiene un'array di record DNS di risposta\footnote{[ Nome | Tipo | Classe(IN) | TTL | Lunghezza |  Dati ]}, ogni record NON è rappresentato da un singolo LayerField contenente tutti i campi di un \textit{record DNS}, ma bensì ci saranno tanti LayerField(quanti sono i campi del \textit{record DNS}) che conterranno ognuno una lista campi del record dello stesso tipo, ottenendo quindi: lista di recod.nomi, lista di recod.tipi, \dots e così via. Questa strutturazione ha comportato un'enorme lavoro nella raccolta dati mDNS, e le scelte implementative dell'algoritmo sono state basate su di essa.\\
+		
+	\end{itemize}
+	
+	
+	 
 	\subsection{DropBox\_util.py}
 	\subsection{discriminators\_sets.py}
 	

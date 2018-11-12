@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  12 NOV 2018 10:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.8.28)  12 NOV 2018 20:04
 entering extended mode
 **./TestoTesi.tex
 (TestoTesi.tex
@@ -373,44 +373,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--196
  []
 
 [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 224--226
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--233
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--233
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 234--238
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--238
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
 
  []
 
 [34]
-Capitolo 5.
-[35
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
-] [36
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 245.
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 245.
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--248
+
+ []
+
+[35] [36]
+Capitolo 5.
+[37
+
+] [38
 
 ]
 Capitolo 6.
-(TestoTesi.bbl [37] [38
+(TestoTesi.bbl [39] [40
 
 ]
 Underfull \hbox (badness 1320) in paragraph at lines 10--13
@@ -429,15 +436,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--29
 \T1/cmr/m/n/12 registry.[https://www.iana.org/assignments/service-names-port-
  []
 
-[39]) [40] (TestoTesi.aux) ) 
+[41]) [42] (TestoTesi.aux) ) 
 Here is how much of TeX's memory you used:
- 3550 strings out of 492973
- 45032 string characters out of 3135926
- 130498 words of memory out of 3000000
- 7340 multiletter control sequences out of 15000+200000
+ 3568 strings out of 492973
+ 45338 string characters out of 3135926
+ 130511 words of memory out of 3000000
+ 7355 multiletter control sequences out of 15000+200000
  23675 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,25p,1802b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,25p,1802b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\p
 k\ljfour\jknappen\ec\dpi600\ecbi1440.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX
 \2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Edoardo\AppData\
@@ -454,10 +461,11 @@ Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users
 k> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ecrm1200.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\ecrm1440.pk> <C:\Users\Edoardo\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecrm2074.pk>
-Output written on TestoTesi.pdf (40 pages, 244364 bytes).
+ljfour\jknappen\ec\dpi600\ecrm2074.pk><D:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb>
+Output written on TestoTesi.pdf (42 pages, 265672 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
+ 659 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
