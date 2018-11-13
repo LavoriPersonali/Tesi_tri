@@ -1,5 +1,22 @@
+<<<<<<< HEAD
 [0] Config.pm:354> INFO - This is Biber 2.7
 [0] Config.pm:357> INFO - Logfile is 'TestoTesi.blg'
 [43] biber-MSWIN64:303> INFO - === 
 [477] Utils.pm:180> ERROR - Cannot find control file 'TestoTesi.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
 [478] Biber.pm:113> INFO - ERRORS: 1
+=======
+This is BibTeX, Version 0.99dThe top-level auxiliary file: TestoTesi.aux
+The style file: unsrt.bst
+Database file #1: bibliografia.bib
+I was expecting a `,' or a `}'---line 80 of file bibliografia.bib
+ :  
+ :  address   = "Department of Computer Science, Columbia University, New York, USA; DoCoMo Communications Laboratories Europe, Munich, Germany"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Too many commas in name 1 of "Internet Engineering Task Force (IETF), S. Cheshire, M. Krochmal, Apple Inc." for entry mDNS
+while executing---line 944 of file unsrt.bst
+Warning--empty year in z2z
+Too many commas in name 1 of "Daniel Kaiser, Marcel Waldvogel, Holger Strittmatter, Oliver Haase" for entry privAdd2
+while executing---line 944 of file unsrt.bst
+(There were 3 error messages)
+>>>>>>> 845252778c9c14df7a6451a3fa665f01566a47d2

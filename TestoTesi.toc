@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \select@language {italian}
 \select@language {italian}
 \contentsline {chapter}{\numberline {1}Introduzione}{5}
@@ -12,3 +13,39 @@
 \contentsline {section}{\numberline {4.3}DB-LSP-DISC}{17}
 \contentsline {chapter}{\numberline {5}Lavori Futuri}{19}
 \contentsline {chapter}{\numberline {6}Conclusioni}{21}
+=======
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{\numberline {1}Introduzione}{7}
+\contentsline {section}{\numberline {1.1}Traffico LAN Prima}{8}
+\contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{9}
+\contentsline {section}{\numberline {1.3}Obiettivo}{9}
+\contentsline {chapter}{\numberline {2}Il mio Lavoro}{11}
+\contentsline {section}{\numberline {2.1}Protocolli Multicast/Broadcast}{12}
+\contentsline {subsection}{\numberline {2.1.1}Link-local Multicast Name Resolution}{12}
+\contentsline {subsection}{\numberline {2.1.2}NetBIOS-NS}{12}
+\contentsline {subsection}{\numberline {2.1.3}Microsoft Windows Browser Protocol}{13}
+\contentsline {subsection}{\numberline {2.1.4}Multicast DNS-(Service Discovery)}{14}
+\contentsline {subsection}{\numberline {2.1.5}Dropbox LAN sync Discovery Protocol}{15}
+\contentsline {section}{\numberline {2.2}Panoramica del Lavoro}{15}
+\contentsline {subsection}{\numberline {2.2.1}Funzionamento}{16}
+\contentsline {section}{\numberline {2.3}Pro e Contro Soluzione}{21}
+\contentsline {chapter}{\numberline {3}Stato dell'Arte}{25}
+\contentsline {section}{\numberline {3.1}z2z}{25}
+\contentsline {section}{\numberline {3.2}Privacy mDNS}{26}
+\contentsline {section}{\numberline {3.3}Broadcast Data Study}{27}
+\contentsline {section}{\numberline {3.4}Arginare il problema della Privacy}{28}
+\contentsline {chapter}{\numberline {4}Implementazione}{31}
+\contentsline {section}{\numberline {4.1}Strumenti usati}{31}
+\contentsline {subsection}{\numberline {4.1.1}\textit {WireShark} (\textit {TShark})}{31}
+\contentsline {subsection}{\numberline {4.1.2}\textit {Pyshark}}{32}
+\contentsline {subsection}{\numberline {4.1.3}Python 3}{32}
+\contentsline {section}{\numberline {4.2}Il Tool di Analisi: Struttura}{33}
+\contentsline {subsection}{\numberline {4.2.1}classFrames.py}{33}
+\contentsline {subsection}{\numberline {4.2.2}DropBox\_util.py}{38}
+\contentsline {subsection}{\numberline {4.2.3}discriminators\_sets.py}{38}
+\contentsline {section}{\numberline {4.3}mDNS}{38}
+\contentsline {section}{\numberline {4.4}DB-LSP-DISC}{38}
+\contentsline {chapter}{\numberline {5}Lavori Futuri}{39}
+\contentsline {chapter}{\numberline {6}Conclusioni}{41}
+>>>>>>> 845252778c9c14df7a6451a3fa665f01566a47d2
