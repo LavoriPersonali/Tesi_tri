@@ -1,21 +1,5 @@
-<<<<<<< HEAD
 \select@language {italian}
 \select@language {italian}
-\contentsline {chapter}{\numberline {1}Introduzione}{5}
-\contentsline {section}{\numberline {1.1}Traffico LAN Prima}{6}
-\contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{7}
-\contentsline {section}{\numberline {1.3}Obiettivo}{7}
-\contentsline {chapter}{\numberline {2}Il mio Lavoro}{9}
-\contentsline {chapter}{\numberline {3}Stato dell'Arte}{15}
-\contentsline {chapter}{\numberline {4}Implementazione}{17}
-\contentsline {section}{\numberline {4.1}Strumenti usati}{17}
-\contentsline {section}{\numberline {4.2}mDNS}{17}
-\contentsline {section}{\numberline {4.3}DB-LSP-DISC}{17}
-\contentsline {chapter}{\numberline {5}Lavori Futuri}{19}
-\contentsline {chapter}{\numberline {6}Conclusioni}{21}
-=======
-\babel@toc {italian}{}
-\babel@toc {italian}{}
 \contentsline {chapter}{\numberline {1}Introduzione}{7}
 \contentsline {section}{\numberline {1.1}Traffico LAN Prima}{8}
 \contentsline {section}{\numberline {1.2}Traffico LAN Oggi}{9}
@@ -48,4 +32,3 @@
 \contentsline {section}{\numberline {4.4}DB-LSP-DISC}{38}
 \contentsline {chapter}{\numberline {5}Lavori Futuri}{39}
 \contentsline {chapter}{\numberline {6}Conclusioni}{41}
->>>>>>> 845252778c9c14df7a6451a3fa665f01566a47d2
