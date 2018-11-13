@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preambolo
+
+% === Impostazione del tipo di documento da creare ========
+% tipo di documento book, dimensione del font 11pt, formato della pagina a4
+% la specifica del formato della pagina consente a Latex di calcolare la dimensione
+% e il numero di linee per pagina, nonchè di centrare il testo sia orizzontalmente che
+% verticalmente.
+
+% Non viene specificato se il testo debba essere formattato nella pagina: ciò
+% vuol dire che il testo sarà messo su un unica colonna, come di default.
+
+% Non è specificato come debbano essere stampate le pagine, questo vuol dire che
+% si adotta l'opzione twoside di default per i book, cioè i numeri di pagina
+% appaiono sulla sinistra per le pagine pari e sulla destra per le pagine dispari
+
+% Non è specificata nessuna opzione di inizio di capitolo su pagina, questo vuol
+% dire che si adotta lo stile di default per i book, cioè i capitoli iniziano nella
+% pagina destra
+\documentclass[12pt,a4paper]{book}
+
+% Aggiunge i bookmark ed i collegamenti nel file pdf
+
+% Permette di passare da un certo numero di colonne ad un altro senza iniziare
+% una nuova pagina. Per esempio è possibile passare da una colonna a 2 e poi
+% di nuovo ad una all'interno della stessa pagina.
+%\usepackage{multicol}
+
+% === Impostazione dei font ===============================
+% Queste impostazioni permettono di usare la lingua italiana in LaTeX.
+% E' necessario comunque cambiare anche le regole di ritorno a capo, cosa
+% che va fatta tramite l'utility "MiKTeX Options".
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{ae}	%sostituisce i font raster con font vettoriali
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+%\usepackage{amsmath}
+
+% E' una reimplementazione dell'ambiente verbatim che previene l'overflow
+% della memori per lunghi testi.
+\usepackage{verbatim}
+\usepackage{alltt}
+
+% === Integrazione delle figure ===========================
+% Il package graphicx permette di inserire figure all'interno dei documetni LaTeX.
+% Con l'opzione [draft] vengono visualizzati i soli riquadri delle figure. Questa
+% opzione è utile per eseguire una compilazione veolce per verificare il posizionamento
+% delle figure. 
+%\usepackage[draft]{graphicx}
+\usepackage{graphicx}
+
+% Con questo comando si dice a LaTex dove sono memorizzate le figure
+\graphicspath{{./imgs/}}
+
+% Riferirsi alla documentazione subfigurepackage.pdf
+\usepackage{subfigure}
+
+% Permette di cambiare lo stile del carattere usato per le didascalie
+\usepackage[bf]{caption2}
+
+% === Regolazione dei margini =============================
+% Si regolano i margini in modo da centrare orizzontalmente il testo nella
+% pagina
+\addtolength{\oddsidemargin}{30pt}
+\addtolength{\evensidemargin}{-30pt}
+
+% Consente di definire in modo flessible note e titoli
+\usepackage{fancyhdr}
+
+% Permette di creare celle che spaziano su più righe
+\usepackage{multirow}
+
+\newcommand{\qts}[1]{``#1''}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Testo della tesi
+
+\begin{document}
+	%Con queto comando si può cambaire il modo in cui verranno nominate le
+	%figure. Di default è "Figura", qui viene cambiato in "Fig."
+	\renewcommand{\figurename}{Fig.}
+
+	% === Frontespizio =======================================
+	% formato della pagina: l'argomento empty sta ad indicare che sia le linee
+	% di testa che quelle di coda sono vuoti e non hanno numeri di pagina
+	\pagestyle{empty}
+	% Frontespizio: mediante il comando input si legge il frontespizio
+	\input{frontespizio}
+
+	% === Riassunto ==========================================
+	% formato della pagina: l'argomento plain sta ad indicare che le pagine
+	% verranno numerate in basso al centro
+	\pagestyle{plain}
+	% \pagenumbering{arabic}
+	\input{abstract}
+
+	% === Indice =============================================
+  % \pagestyle{headings}
+  \tableofcontents
+
+	% === Capitoli Tesi ======================================
+	\input{capitolo1}
+	\input{capitolo2}
+	\input{capitolo3}
+	\input{capitolo4}
+	\input{capitolo5}
+
+	% === Bibliografia =======================================
+  \newpage
+  \bibliographystyle{plain}
+  \bibliography{bibliografia}
+  
+	% === Appendici ==========================================
+	\appendix
+	\input{appendiceA}
+	\input{appendiceB}
+
+\end{document}
