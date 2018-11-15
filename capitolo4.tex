@@ -130,6 +130,53 @@ Altri RFC analizzati riguardo mDNS sono stati \textit{RFC6973} e \textit{RFC8386
 
 Per quanto riguarda i tipi di servizi annunciati tramite i record \textit{DNS-SD}, nel corso dello studio preliminare e raccolta di informazioni, è stato analizzato l'elenco dei \qts{\textit{servizi dichiarati}} dall'organizzazione \textit{Internet Assigned Numbers Authority}, conosciuto come IANA\cite{IANA}. Per ovvie ragioni tempo, non sono stati visionati ed utilizzati tutti i servizi dichiarati in questa raccolta, anche dato che la probabilità di imbattersi in molti di loro è molto bassa, e per quasi la totalità sono servizi sì \textit{dichiarati} in questo elenco, ma sono servizi proprietari, e i loro comportamenti e interazioni fra chi li annuncia e chi ne usufruisce molto spesso non sono documentati. Per questi motivi, ci si è affidati ad alcune \qts{liste più ristrette} di servizi, le quali riportavano quelli \qts{più comunemente utilizzati}. 
 Per ampliare queste liste e rendere questo studio \textit{completo}, per lo meno per quanto riguarda gli ambienti sui quali è stata testata la funzionalità del tool sviluppato per questo studio, è stata raccolta documentazione anche riguardo tutti quei servizi riscontrati nelle catture del traffico di rete, utilizzate in fase di sviluppo.\\
-Questo approccio, per quanto di primo impatto possa considerarsi impreciso e incompleto, ha prodotto degli ottimi risultati in fase di test, riuscendo a catalogare \textit{correttamente} la totalità dei dispositivi rilevati in questa fase, provando la bontà dell'elaborato.\\
+Questo approccio, per quanto di primo impatto possa considerarsi impreciso e incompleto, ha prodotto degli ottimi risultati in fase di test e validazione, riuscendo a catalogare \textit{correttamente} la totalità dei dispositivi rilevati in questa fase, provando la bontà dell'elaborato.\\
 In sintesi, l'iter che ha portato al \qts{popolamento} degli insiemi di servizi annunciati tramite mDNS-DS è stato: partire da un elenco di servizi comunemente usati, e in fase di sviluppo e di test, aggiunti man di mano tutti quelli nuovi incontrati e che non ne facevano parte inizialmente, utilizzandoli nella categorizzazione dei dispositivi dopo uno studio a riguardo sul singolo servizio da aggiungere.\\
 
+La raccolta di materiale inerenti ai pacchetti di Dropbox \textit{Discovery} è partita dall'analisi del documento/guida \qts{\textit{Namespace Guide}}\cite{web:dropboxNS}, reperibile online sul sito della compagnia Dropbox nella sezioni sviluppatori. Tale documento riporta la natura e l'implementazione dei \qts{Namespaces}, fornendo dettagli su come sfruttate tali informazioni ai nostri scopi: scoprire le relazioni fra i dispositivi presenti nella rete locale.\\
+La guida copre argomenti avanzati relativi a cartelle e file condivisi di varia natura, dalle \textit{Shared Folders}, \textit{Team Folders} e \textit{Team Spaces \& Member Folders} per i Business Accounts. Lo scopo del documento è quello di fornire una guida all'utilizzo dell'API di Dropbox, quindi non esattamente inerente al nostro lavoro, ma fornisce comunque un'ottima spiegazione riguardo al \qts{cosa sono i namespaces}, da cosa vengono ricavati, cosa rappresentano, e soprattutto quali informazioni si possono dedurre da essi.\\
+
+Riguardo la completezza delle informazioni sulle quali si basa l'analisi del tool, si può concludere che i dati raccolti rappresentano sicuramente la totalità delle informazioni ricavabili dal traffico di una rete locale. Questo è mutuato dal fatto che se, come nelle reti di calcolatori spesso accade, viene perso un pacchetto, o magari non viene rilevato dallo strumento di cattura, il pacchetto viene comunque ritrasmesso ogni 30 secondi circa, come prevedono i protocolli presi in esame(mDNS e DB-LSP-DISC). Quindi effettuando una cattura di pochi minuti si ha la certezza di aver raccolto tutte le informazioni che possono circolare in quel dato momento all'interno di una rete locale.\\
+Anche per quanto riguarda il recupero e la codifica degli stessi dati non è stato un problema, in quanto tutte le informazioni dei protocolli analizzati vengono trasmesse in chiaro e a tutti i dispositivi connessi, ed è proprio uno dei punti di partenza di questo studio. Come già accennato in precedenza, il punto di forza di questa analisi è proprio la \qts{discrezione} e la facilità con la quale si ottengono informazioni private dai dispositivi.\\
+
+Analizzando il modo con cui vengono classificati i dispositivi, si evince anche l'affidabilità della classificazione, giustificata da varie considerazioni e derivata da più elaborazioni sequenziali dei dati di natura differente, portando quindi a convergere verso una corretta deduzione sul tipo di dispositivo.\\
+Uno dei punti di forza della corretta classificazione è appunto il grado \qts{affidabilità} associato ad ogni informazione in base al quale il tool assegna una \textit{classe} rispetto che un'altra ad un dispositivo. Ad esempio, se un nodo riporta nel suo hostname una keyword evocativa, che potrebbe indurre ad una classificazione corretta come errata, non gli viene associato direttamente quella classificazione, ma si va a verificare tale informazione analizzando i servizi che esso annuncia, e quindi solo allora viene etichettato il dispositivo con la corretta classe. Anche l'informazione riguardante \textit{modello} e \textit{versione OS} viene comunque verificata analizzando gli altri servizi offerti.\\
+Anche la scelta delle keyword non è casuale, ma bensì è frutto di numerose catture e verifiche in fase di sviluppo, riportando solo le parole chiave che effettivamente potessero essere usate come discriminanti per i vari dispositivi, e solo dopo un'attenta verifica che quella determinata keyword appartenga effettivamente a quella particolare categoria o a quel particolare dispositivo nello specifico.\\
+Per validare tutte queste considerazioni, oltre che ad eseguire il tool in ambienti eterogenei e che presentassero un pò la totalità delle situazioni che si possano riscontrare nella realtà, sono stati sia raccolti dati in ambienti controllati e \qts{conosciuti}, quindi avendo ben presente le tipologie di dispositivi che facessero parte della rete locale, sia verificando di persona, direttamente sul dispositivo identificato, che l'analisi effettuata su di esso fosse corretta, categorizzandolo nel giusto modo, e dove fosse stato possibile, dedurre correttamente nome e cognome del proprietario che in quel momento lo utilizzava.
+
+\subsection{Analisi dei Risultati}
+
+Di seguito vengono riportati alcuni risultati, omettendo opportunamente alcune informazioni ai fini di tutelare la sicurezza e la privacy di persone e reti nella quale è stata effettuata la cattura.\\
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{001_ipad}
+	\caption{Esempio di analisi di un dispositivo\label{fig:ipad}}
+\end{figure}
+
+In questo esempio si nota come sia il nome, sia la diffusione del record \qts{\_device-info} vengono utilizzati per dedurre Tipo del dispositivo e \qts{ipotetico possessore}.\\
+
+Un'altro esempio che vale la pena osservare è il seguente, nel quale viene rilevato un dispositivo mobile, dando addirittura un \textit{Cognome} al possessore(non riportato interamente per motivi di privacy).
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{002_iphone}
+	\caption{Dispositivo mobile\label{fig:iphone}}
+\end{figure}
+\\
+Interessante notare il fatto che non è solo l'\textit{hostname} che attribuisce la categoria al dispositivo, ma tale supposizione viene comunque confermata dal servizio \textit{\_apple-mobdev2}, che rientra nella categoria di tutti quei servizi che vengono diffusi dai dispositivi mobili Apple.\\
+
+Di completamente differente categoria è la rilevazione di una stampante, la quale oltre che al modello e produttore, diffonde numerose informazioni \qts{private}, che magari un eventuale intruso nella rete potrebbe sfruttare.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{004_printer}
+	\caption{Stampante collegata in rete\label{fig:printer_info}}
+\end{figure}
+
+Il prossimo esempio dimostra la validità con cui sono state suddivise le categorie di servizi che ogni tipologia di dispositivo annuncia, che anche senza l'ausilio del rilevare la keyword \qts{\textit{NAS}} all'interno dell'hostname, ha correttamente identificato il nodo della rete come NAS analizzando solo i servizi dichiarati dalla macchina.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{006_nas}
+	\caption{Dispositivo adibito a Network Attached Storage\label{fig:nas}}
+\end{figure}
+
+Nel complesso, in tutti i file di cattura utilizzati per testare il tool sviluppato per questo lavoro, sono stati rilevati un totale di 160 dispositivi classificandoli correttamente 156, e restando nell'incertezza, a causa di informazioni non sufficientemente caratterizzanti, con solo 4 dispositivi. Sono state quindi rilevati: 99 Workstation, di cui 16 Personal computer Apple, e ben 88 dei quali aventi Dropbox in esecuzione in quel momento; 15 NAS, di cui 7 Time Capsule; 17 dispositivi Mobili, suddivisi in 5 iPhone, 7 iPad e 7 Android; 29 Stampanti, rilevando 2 dispositivi che ne condividevano almeno una. 
