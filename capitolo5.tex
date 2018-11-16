@@ -1,7 +1,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Capitolo 5
 
-\chapter{Conclusioni}
+\chapter{Conclusioni e Lavori Futuri}
 \label{ref:Conclusioni}
 
-Scrivere le conclusioni della tesi.
+\section{Lavori futuri}
+Come accennato in precedenza, la scelta stessa del linguaggio di programmazione(Python), per sviluppare il tool per l'analisi della rete locale, è stata fatta per rendere questo lavoro di Tesi come un punto di partenza, da estendere e migliorarne le capacità di deduzione riguardo le reti di calcolatori e i dispositivi connessi ad esse.\\
+Anche la considerevole quantità di protocolli ed applicativi che fanno uso dei canali di Broadcast e Multicast è un'ottimo spunto dal quale potrebbe scaturire il proseguimento nello sviluppo di questo Elaborato.\\
+
+Un esempio potrebbe essere quello di estendere il tool aggiungendo la capacità di analizzare dati provenienti da protocolli come NetBIOS o \textit{Microsoft Windows Browser Protocol}, incrementando le informazioni acquisite, e quindi andare ad identificare tutti quei dispositivi che non usufruiscono dei protocolli già inclusi nello strumento di analisi, e che quindi non vengono \qts{rilevati} da quest'ultimo.\\
+
+Un'altra idea per estendere questo lavoro è incrementare la capacità di analisi del tool aggiungendo la possibilità di riconoscere \textit{nomi} di persone, dispositivi, e quant'altro possa rivelare ulteriori informazioni a partire dalle stringhe reperite dagli hostnames dei nodi della rete. Un punto di partenza sarebbe aggiungere ulteriori dizionari di keyword da utilizzare per identificare la tipologia di dispositivo che le integra nel proprio hostname. O ancora, aggiungere la capacità di reperire in rete, tramite appositi servizi o API, elenchi aggiornati con i nomi, cognomi e diminutivi di persone comunemente usati, e quindi riuscendo con maggiore facilità e precisione ad attribuire un proprietario ad un dato dispositivo.\\
+
+Una capacità che per motivi di tempo non è stata sviluppata, è quella di dettagliare ulteriormente la caratterizzazione dei dispositivi andando ad analizzare i campi \textit{TXT} di tutti quei servizi che includono informazioni riguardo le caratteristiche Hardware e Software del dispositivo, non limitandosi a quelle dei record \textit{ \_device-info } annunciati solo dai dispositivi Apple.\\
+I servizi che li diffondono sono numerosi, a partire dai protocolli di stampa, come \textit{\_ipp} che forniscono moltissimi dettagli sulla stampate di rete, fino ad arrivare a servizi che fungono da \textit{appoggio} a protocolli e applicativi proprietari, come ad esempio \textit{\_nomachine} che diffonde informazioni riguardo la macchina che si rende disponibile al controllo di desktop remoto, fornendo informazioni come: \textit{OS=Ubuntu 18.04.1 LTS} e \textit{uuid=\dots} .\\
+
+Un'altra funzionalità che potrebbe incrementare il numero di informazioni estratte dai campi mDNS è quella di effettuare delle \qts{query attive} per il discovery di tutti quei dispositivi che, sì offrono servizi, ma che magari a causa di comportamenti più conservativi non divulgano informazioni a riguardo se non direttamente interpellati. 
+Con questa utilità quindi si va a stimolare in maniera diretta il nodo in questione, incrementando quindi le informazioni riguardo i servizi offerti.\\
+
+\section{Conclusioni}
