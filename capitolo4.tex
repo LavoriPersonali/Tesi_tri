@@ -121,6 +121,12 @@ La scarsa quantità di documentazione riguardo i servizi DNS-SD ha portato ad un 
 
 Altre 2 hash-tables, \textbf{\textit{apple\_products}} e \textbf{\textit{apple\_osx\_versions}}, sono invece state utilizzate per identificare con esattezza modello e Sistema Operativo dei dispositivi Apple che diffondono il \qts{servizio} \textit{\_device-info}, e che riporta nei record TXT associati: il numero del modello e opzionalmente l'identificativo della versione dell'OS che in quel momento è in esecuzione su quella macchina. Grazie a ntop??? ...\\
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=12cm]{015_apple_prod}
+	\caption{Dizionario dei modelli di dispositivi Apple\label{fig:apple_prod}}
+\end{figure}
+
 Le ultime strutture sono adibite all'analisi e alla scomposizione di \textit{hostname.local} annunciati dai dispositivi nei record di risposta mDNS di tipo A o di tipo AAAA.\\
 La prima è un'insieme di \textit{dizionari}, sempre indicizzati dalle Categorie di dispositivi precedentemente descritte, chiamato \textbf{\textit{keyword\_on\_alias}}, all'interno del quale, per ogni categoria, è presente un ulteriore dizionario che contiene le coppie \textit{<chiave, valore>}, dove \textit{chiave} rappresenta appunto la keyword che solitamente è presente negli hostname di quel tipo, e \textit{valore} è una stringa che descrive brevemente quale è il dispositivo che riporta quella keyword nel proprio nome.\\
 Le ultime 2, \textbf{\textit{common\_string}} e \textbf{\textit{common\_string\_s}} sono liste ordinate di \qts{stringhe comuni} che solitamente compongono l'hostname.local, e sono utilizzate per \qts{ripulire} la stringa ed ottenere un \textit{nominativo} al quale attribuire il ruolo di \qts{possessore del dispositivo}. Questo processo è stato una conseguenza dello studio dei vari hostnames annunciati nelle reti utilizzate per la cattura di traffico dati in fase di sviluppo, test, e validazione, raccogliendo quindi i pattern di stringhe più comuni ed ottenendo dei risultati tutto sommato accettabili in fase di validazione, e identificando nella maggior parte dei casi il nome corretto del possessore del dispositivo.\\
