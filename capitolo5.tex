@@ -1,10 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Capitolo 5
 
-\chapter{Conclusioni e Lavori Futuri}
-\label{ref:Conclusioni}
+\chapter{Lavori futuri}
+\label{ref:Lavorifuturi}
 
-\section{Lavori futuri}
 Come accennato in precedenza, la scelta stessa del linguaggio di programmazione(Python), per sviluppare il tool per l'analisi della rete locale, è stata fatta per rendere questo lavoro di Tesi come un punto di partenza, da estendere e migliorarne le capacità di deduzione riguardo le reti di calcolatori e i dispositivi connessi ad esse.\\
 Anche la considerevole quantità di protocolli ed applicativi che fanno uso dei canali di Broadcast e Multicast è un'ottimo spunto dal quale potrebbe scaturire il proseguimento nello sviluppo di questo Elaborato.\\
 
@@ -17,30 +16,3 @@ I servizi che li diffondono sono numerosi, a partire dai protocolli di stampa, c
 
 Un'altra funzionalità che potrebbe incrementare il numero di informazioni estratte dai campi mDNS è quella di effettuare delle \qts{query attive} per il discovery di tutti quei dispositivi che, sì offrono servizi, ma che magari a causa di comportamenti più conservativi non divulgano informazioni a riguardo se non direttamente interpellati. 
 Con questa utilità quindi si va a stimolare in maniera diretta il nodo in questione, incrementando quindi le informazioni riguardo i servizi offerti.\\
-
-\section{Conclusioni}
-
-Questo studio riguardo la raccolta di informazioni su reti locali e dispositivi ad esse connessi si è rivelato più soddisfacente, considerata la quantità di informazioni a cui si è avuto accesso.\\
-
-L'obiettivo di \qts{anonimato} e discrezione per quanto la raccolta dati, e lo strumento utilizzato a tale scopo, è stato pienamente raggiunto, in quanto non è possibile in alcun modo identificare il tool che in quel momento sta catturando ed analizzando i pacchetti che circolano nella rete.
-Infatti, lo strumento si limita ad analizzare i pacchetti, e quindi le informazioni in essi contenuti, che vengono recapitati \textit{direttamente} alla macchina sulla quale è in esecuzione, non compiendo alcuna azione che potrebbe rendere visibile l'\textit{attività di analisi} della rete.\\
-
-Per quanto riguarda il tipo di informazioni che è stato possibile ricavare dai dati reperiti dalle comunicazioni Broadcast e Multicast, si sono rivelati sorprendenti, svelando dettagli, specialmente per quanto riguarda i dispositivi, decisamente \qts{personali}, e che potrebbero essere sfruttati come punti di debolezza per eventuali attacchi da parte di intrusi nella rete, o utenti \qts{malintenzionati}.\\
-Riguardo ai dispositivi, è stato possibile identificare, nei casi più fortuiti: modello del dispositivo, e quindi tutte le caratteristiche Hardware di cui dispone, e Sistema Operativo, nonché versione installata in quel momento, fornendo dettagli del Software che vi è in esecuzione.
-Inoltre, sempre riguardo i dispositivi, vengono fornite informazioni sulle periferiche che in quel momento sono a loro connesse, come ad esempio stampanti, scanner, ed altro materiale \qts{da ufficio}.
-In casi più generici invece, vene comunque identificata correttamente la \textit{Classe} a cui il dispositivo appartiene, grazie ai servizi applicativi che esso offre, fornendo un'idea generica di come vengano sfruttate le reti locali analizzate: per utilizzo \qts{d'ufficio} se vengono rilevate principalmente stampanti, fax e scanner, o magari per il solo accesso alla rete Internet globale, se rilevati principalmente dispositivi mobili, o ancora per un utilizzo \qts{privato} e condivisione di \textit{Media}, se vengono rilevati numerosi dispositivi atti a condividere file, musica, streaming video e audio, e quant'altro di simile.\\
-Tutte queste informazioni riguardo i dettagli dei dispositivi, potrebbero essere sfruttate per \textit{indagini di mercato} da tutte quelle aziende che lavorano nel settore, e quindi sfruttando le \qts{abitudini} degli utenti di una determinata rete locale, potrebbero ricavare informazioni utili ai loro scopi, come intraprendere o meno determinate scelte riguardo la vendita e promozione dei propri prodotti.\\
-
-Per quanto riguarda gli utenti, le persone fisiche che quindi in alcuni casi possiedono il dispositivo, l'informazione più personale che si riesce a ricavare da questo studio sono il \textit{nome} e \textit{cognome}.
-Per quanto possa a prima vista non sembrare particolarmente rilevante, sono comunque informazioni che appartengono alla sfera privata degli utenti, e quindi visto il modo con cui vengono diffuse, andrebbero trattate con più attenzione.
-Questo offre un ottimo spunto di riflessione su come i nostri dati personali vengono utilizzati, e magari dare maggiore consapevolezza dei rischi che si corre utilizzando determinati dispositivi, servizi o tecnologie che a prima vista risultano estremamente comode, ma che tutto sommato comportano degli svantaggi e un prezzo da pagare per quella comodità: le proprie informazioni.\\
-
-Sempre restando nella \textit{sfera privata} degli utenti, le informazioni ricavate dai pacchetti Dropbox sono ancor più rilevanti.
-Di fatto, non solo svelano dettagli delicati riguardo la topologia della rete, ma bensì rivelano anche informazioni inerenti alle interazioni sociali che si hanno fra gli utilizzatori di tali reti locali.\\
-Queste informazioni possono dare inizio a numerosissime supposizioni a riguardo: a partire dal dedurre quali sono i gruppi di lavoro con i quali vengono organizzate le attività di un'azienda, o ancora i ruoli che ricoprono gli utenti che fanno parte di una determinata organizzazione; più semplicemente, possono rivelare le relazioni private che incorrono fra i possessori dei dispositivi, ad esempio: se 2 utenti di 2 dispositivi condividono una cartella o dei file, molto probabilmente hanno una qualche sorta di interazione, o per lo meno si conoscono.\\
-
-Ma tutte le informazioni scaturite da questo studio, come possono essere utilizzate? chi potrebbe essere interessato a sfruttarle?\\
-Oltre che ad utilizzi dannosi o con il fine di \qts{invadere} la sfera privata degli utenti per scopi di Marketing, questo è un prezioso strumento per conoscere la propria rete locale, e quindi attuare azioni atte a contrastare queste intrusioni.
-In primo luogo potrebbero essere usate per incrementare il livello di sicurezza, magari impedendo completamente la circolazione di tali informazioni, o quanto meno restringerle a determinati nodi, suddividendo la rete locale in sotto-reti autonome, e quindi relegandone il traffico all'interno, dato che le comunicazioni Broadcast e Multicast sono limitate alla rete locale di cui fanno parte.\\
-Un'altro utilizzo sarebbe quello di monitoraggio di una rete locale, tenendo traccia di quali dispositivi vengono connessi, quali utenti ne fanno parte, e magari rilevando accessi indesiderati da parte di utenti non autorizzati.\\
-In fine, più semplicemente, queste informazioni potrebbero rendere consapevoli gli utenti di quali dati rendono disponibili, e quindi dare la possibilità di scegliere le azioni da compiere a riguardo, da un semplice cambio di \textit{hostname}, a magari interrompere l'utilizzo di determinati servizi o tecnologie in favore di altre che offrono gli stessi vantaggi con una maggiore attenzione riguardo i dati diffusi in rete.
